@@ -1,0 +1,91 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Maintenance;
+use Illuminate\Http\Request;
+
+class MaintenanceController extends Controller
+{
+    public function index()
+    {
+        $maintenance = Maintenance::get();
+        return view('maintenance.index', compact('maintenance'));
+    }
+
+    public function create()
+    {
+        return view('maintenance.create');
+    }
+
+    public function store(Request $request)
+    {
+        $data = new Maintenance;
+
+        $data -> vehicle_id = $request->vehicle_id;
+        $data -> maintenance_title = $request->maintenance_title;
+        $data -> maintenance_date = $request->maintenance_date;
+        $data -> maintenance_detail = $request->maintenance_detail;
+        $data -> maintenance_cost = $request->maintenance_cost;
+        $image = null;
+
+        if($request->hasFile('maintenance_image')){
+            $file = $request->file('maintenance_image');
+            $name = date('YmdHis').'.'.$file->getClientOriginalExtension();
+            $file->move(public_path(). '/maintenance_images', $name);
+            $image = $name;
+
+        }else{
+            $image = $request->maintenance_image;
+        }
+
+        $data -> maintenance_image = $image;
+
+        // return $data;
+
+        $data->save();
+
+        return redirect()->route ('maintenance')->with('success', 'maintenance has been added successfully.');
+    }
+
+    public function edit($id)
+    {
+        $maintenance = Maintenance::findOrFail($id);
+        return view('maintenance.edit', compact('maintenance'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $data = Maintenance::findOrFail($id);
+
+        $data -> vehicle_id = $request->vehicle_id;
+        $data -> maintenance_title = $request->maintenance_title;
+        $data -> maintenance_date = $request->maintenance_date;
+        $data -> maintenance_detail = $request->maintenance_detail;
+        $data -> maintenance_cost = $request->maintenance_cost;
+        $image = null;
+
+        if($request->hasFile('maintanence_image')){
+            $file = $request->file('maintenance_image');
+            $name = date('YmdHis').'.'.$file->getClientOriginalExtension();
+            $file->move(public_path(). '/maintenance_images', $name);
+            $image = $name;
+
+        }else{
+            $image = $request->maintenance_image;
+        }
+
+        $data -> maintenance_image = $image;
+
+        $data->save();
+        return redirect()->route ('maintenance')->with('success', 'maintenance has been updated successfully.');
+    }
+
+    public function destroy($id)
+    {
+        $data = Maintenance::find($id);
+        $data->delete();
+
+        return redirect()->route ('maintenance')->with('success', 'maintenance has been deleted successfully.');
+    }
+}
