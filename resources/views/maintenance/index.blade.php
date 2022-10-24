@@ -19,6 +19,7 @@
         <tr>
           <th>No</th>
           <th>Vehicle</th>
+          <th>Workshop Name</th>
           <th>Title</th>
           <th>Date</th>
           <th>Detail</th>
@@ -38,6 +39,7 @@
             <tr>
               <td> {{ $no++ }} </td>
               <td> {{ $row->Vehicle->model ." ". $row->Vehicle->no_plate}} </td>
+              <td> {{ $row->workshop_name}} </td>
               <td> {{ $row->maintenance_title}} </td>
               <td> {{ $row->maintenance_date}} </td>
               <td> {{ $row->maintenance_detail}} </td>

@@ -60,7 +60,7 @@
                 
               <td> {{ $row->totalmonthly_gas}} </td>
               <td>
-                <a href="/maintenance" class="btn btn-outline-primary">Show</i></a>
+                <a href="/showmaintenance/{{$row->id}}" class="btn btn-outline-primary">Show</i></a>
               </td>
                 <td>
                     <a href="/editvehicle/{{$row->id}}" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>

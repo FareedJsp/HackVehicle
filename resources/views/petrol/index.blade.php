@@ -27,6 +27,7 @@
           <th>Driver</th>
           <th>Date</th>
           <th>Receipt Image</th>
+          <th>Cost</th>
           <th>Action(s)</th>
         </tr>
         </thead>
@@ -44,7 +45,8 @@
               <td> {{ $row->Driver->name ?? null}} </td>
               <td> {{ $row->fill_date_time}} </td>
               <td> <img src="/petrol_images/{{ $row->receipt_image ?? null}} " alt="" width="120"> </td>
-                <td>
+              <td> {{ $row->cost}} </td>  
+              <td>
                     <a href="/editpetrol/{{$row->id}}" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                     <a href="/deletepetrol/{{$row->id}}" class="btn btn-outline-danger" onclick="return confirm('Are you sure to delete data')"><i class="fa-solid fa-trash"></i></a>
                 </td>

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('driver_id');
             $table->dateTime('fill_date_time');
             $table->string('receipt_image');
+            $table->double('cost', 8, 2);
             $table->timestamps();
         });
     }

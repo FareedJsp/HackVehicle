@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('maintenances', function (Blueprint $table) {
             $table->id();
             $table->integer('vehicle_id');
+            $table->string('workshop_name');
             $table->string('maintenance_title');
             $table->date('maintenance_date');
             $table->text('maintenance_detail');

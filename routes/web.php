@@ -44,6 +44,8 @@ Route::get('/editvehicle/{id}',[VehicleController::class,'edit']);
 Route::post('/updatevehicle/{id}',[VehicleController::class,'update']);
 Route::get('/deletevehicle/{id}',[VehicleController::class,'destroy']);
 
+Route::get('/showmaintenance/{id}',[VehicleController::class,'show']);
+
 //Maintenance
 
 Route::get('/maintenance',[MaintenanceController::class,'index'])->name('maintenance');
@@ -70,6 +72,12 @@ Route::post('/insertpetrol',[PetrolController::class,'store']);
 Route::get('/editpetrol/{id}',[PetrolController::class,'edit']);
 Route::post('/updatepetrol/{id}',[PetrolController::class,'update']);
 Route::get('/deletepetrol/{id}',[PetrolController::class,'destroy']);
+
+Route::get('/petrolfront', function () {
+    return view('petrol.front');
+});
+
+// Route::get('/test',[PetrolController::class,'gastotal']);
 
 //wreckage report
 

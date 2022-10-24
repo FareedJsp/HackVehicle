@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Vehicle Management</span>
+      <span class="brand-text font-weight-light">G-Tag</span>
     </a>
 
       <div class="sidebar">

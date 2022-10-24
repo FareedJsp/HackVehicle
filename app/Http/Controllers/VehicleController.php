@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vehicle;
+use App\Models\Maintenance;
 use Illuminate\Http\Request;
 
 class VehicleController extends Controller
@@ -62,5 +63,15 @@ class VehicleController extends Controller
         $data->delete();
 
         return redirect()->route ('vehicle')->with('success', 'vehicle has been deleted successfully.');
+    }
+
+    public function show($id)
+    {
+
+        $maintenance = Maintenance::where("vehicle_id",$id)->get();
+
+        // return $maintenance;
+        
+        return view('vehicle.showmaintenance', compact('maintenance'));
     }
 }

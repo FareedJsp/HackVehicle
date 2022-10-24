@@ -42,6 +42,11 @@
           <input type="file" class="form-control-file" name="receipt_image">
         </div>
 
+        <div class="mb-3">
+          <label class="form-label">Cost (RM)</label>
+          <input type="number" step="any" class="form-control" name="cost">
+        </div>
+
           <button type="submit" class="btn btn-primary btns">Submit</button>
 
         

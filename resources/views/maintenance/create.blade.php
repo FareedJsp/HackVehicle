@@ -22,6 +22,11 @@
         </select>
       </div>
 
+      <div class="mb-3">
+        <label class="form-label">Workshop Name</label>
+        <input type="text" class="form-control" name="workshop_name">
+      </div>
+
         <div class="mb-3">
             <label class="form-label">Title</label>
             <input type="text" class="form-control" name="maintenance_title">
