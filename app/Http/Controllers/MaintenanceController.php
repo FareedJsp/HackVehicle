@@ -23,6 +23,7 @@ class MaintenanceController extends Controller
         $data = new Maintenance;
 
         $data -> vehicle_id = $request->vehicle_id;
+        $data -> workshop_name = $request->workshop_name;
         $data -> maintenance_title = $request->maintenance_title;
         $data -> maintenance_date = $request->maintenance_date;
         $data -> maintenance_detail = $request->maintenance_detail;
@@ -59,6 +60,7 @@ class MaintenanceController extends Controller
         $data = Maintenance::findOrFail($id);
 
         $data -> vehicle_id = $request->vehicle_id;
+        $data -> workshop_name = $request->workshop_name;
         $data -> maintenance_title = $request->maintenance_title;
         $data -> maintenance_date = $request->maintenance_date;
         $data -> maintenance_detail = $request->maintenance_detail;

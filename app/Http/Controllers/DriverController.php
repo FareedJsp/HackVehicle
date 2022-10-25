@@ -25,6 +25,7 @@ class DriverController extends Controller
         $data -> name = $request->name;
         $data -> gender = $request->gender;
         $data -> birth_date = $request->birth_date;
+        $data -> status = $request->status;
         $data -> username = $request->username;
         $data -> password = $request->password;
 
@@ -48,6 +49,7 @@ class DriverController extends Controller
         $data -> name = $request->name;
         $data -> gender = $request->gender;
         $data -> birth_date = $request->birth_date;
+        $data -> status = $request->status;
         $data -> username = $request->username;
         $data -> password = $request->password;
 

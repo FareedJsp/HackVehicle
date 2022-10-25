@@ -34,7 +34,7 @@
 
         <div class="mb-3">
           <label class="form-label">Location</label>
-          <textarea class="form-control" rows="3" name="location"></textarea>
+          <input type="float" class="form-control" name="location">
         </div>
 
         <div class="mb-3">

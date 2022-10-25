@@ -57,7 +57,7 @@
       
                   {{$users}}
                 </td>
-              <td> {{ "kl"}} </td>
+              <td> {{ "TBA" }} </td>
             </tr>
 
             @endforeach

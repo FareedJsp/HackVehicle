@@ -46,7 +46,7 @@
               <td> {{ $no++ }} </td>
               <td> {{ $row->Vehicle->model ." ". $row->Vehicle->no_plate}} </td>
               <td> {{ $row->Driver->name ?? null}} </td>
-              <td> {{ $row->location}} </td>
+              <td> {{ $row->location ?? null}} </td>
               <td> <img src="/wreckage_images/{{ $row->wreckage_image ?? null}} " alt="" width="120"> </td>
               <td> {{ $row->wreckage_title}} </td>
               <td> {{ $row->desciption}} </td>

@@ -81,7 +81,7 @@
         <nav class="mt-2">
           <ul class="nav nav-sidebar">
             <li class="nav-item">
-              <a href="/petrol" class="nav-link">
+              <a href="/petrolfront" class="nav-link">
                 <i class="nav-icon fa-sharp fa-solid fa-gas-pump"></i>
                 <p>
                   Gas Data

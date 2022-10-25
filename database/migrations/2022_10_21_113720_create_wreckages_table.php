@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('vehicle_id');
             $table->integer('driver_id');
-            $table->point('location') ?? null;
+            $table->point('location');
             $table->string('wreckage_image');
             $table->string('wreckage_title');
             $table->text('description');
