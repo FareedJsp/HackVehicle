@@ -14,6 +14,23 @@
   <div class="row">
     <div class="col-6">
 
+      <div class="mb-3">
+        <label class="form-label">Category</label>
+        <select class="form-control" name="category">
+          <option value="{{$vehicle->category}}" selected>{{$vehicle->category}}</option>
+          @if ($vehicle->category == 'Standard')
+              <option value="Van">Lorry</option>
+              <option value="Lorry">Van</option>
+          @elseif($vehicle->category == 'Van')
+              <option value="Standard">Standard</option>
+              <option value="Lorry">Lorry</option>
+          @else
+              <option value="Standard">Standard</option>
+              <option value="Van">Van</option>
+          @endif
+        </select>
+      </div>
+
         <div class="mb-3">
           <label class="form-label">Model</label>
           <input type="text" class="form-control" name="model" value="{{$vehicle->model}}" readonly>
@@ -47,9 +64,12 @@
         <div class="mb-3">
           <label class="form-label">Status</label>
           <select class="form-control" name="status">
-            <option value="{{$vehicle->status}}" selected>Select Availability</option>
-            <option value="Available">Available</option>
-            <option value="Not Available">Not Available</option>
+            <option value="{{$vehicle->status}}" selected>{{$vehicle->status}}</option>
+            @if ($vehicle->status == 'Available')
+                <option value="Not Available">Not Available</option>   
+            @else
+              <option value="Available">Available</option>
+            @endif
           </select>
         </div>
 

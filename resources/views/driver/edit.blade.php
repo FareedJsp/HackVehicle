@@ -16,31 +16,37 @@
 
       <h4 class="mb-3 mt-3">Update Driver Data</h4>
 
+      <div class="mb-3">
+        <label class="form-label">Company</label>
+        <input type="text" class="form-control" name="company" value="{{$driver->company}}">
+      </div>
+
         <div class="mb-3">
             <label class="form-label">Name</label>
-            <input type="text" class="form-control" name="name" value="{{$driver->name}}">
+            <input type="text" class="form-control" name="name" value="{{$driver->name}}" readonly>
         </div>
 
           <div class="mb-3">
             <label class="form-label">Gender</label>
             <select class="form-control" name="gender">
-              <option value="{{$driver->gender}}">Select Gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+              <option value="{{$driver->gender}}" readonly="">{{$driver->gender}}</option>
             </select>
           </div>
 
           <div class="mb-3">
             <label class="form-label">Date of Birth</label>
-            <input type="date" class="form-control" name="birth_date" value="{{$driver->birth_date}}">
+            <input type="date" class="form-control" name="birth_date" value="{{$driver->birth_date}}" readonly>
           </div>
 
           <div class="mb-3">
             <label class="form-label">Status</label>
             <select class="form-control" name="status">
-              <option value="{{$driver->status}}"selected>Open this select menu</option>
+              <option value="{{$driver->status}}"selected>{{$driver->status}}</option>
+              @if ($driver->status == 'Available')
+                <option value="Not Available">Not Available</option>   
+              @else
               <option value="Available">Available</option>
-              <option value="Not Available">Not Available</option>
+              @endif
             </select>
           </div>
 

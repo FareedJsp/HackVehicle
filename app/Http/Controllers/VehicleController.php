@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Vehicle;
 use App\Models\Maintenance;
+use App\Models\TotalPetrol;
 use Illuminate\Http\Request;
 
 class VehicleController extends Controller
@@ -23,6 +24,8 @@ class VehicleController extends Controller
     {
         $data = new Vehicle;
 
+        $data -> company = $request->company;
+        $data -> category = $request->category;
         $data -> model = $request->model;
         $data -> no_plate = $request->no_plate;
         $data -> roadtax_exp = $request->roadtax_exp;
@@ -31,6 +34,14 @@ class VehicleController extends Controller
         $data -> mileage = $request->mileage;
         $data -> status = $request->status;
         $data->save();
+
+        $gas = TotalPetrol::firstOrCreate(
+            [
+            'vehicle_id' => $data->id,
+            'date' => NULL
+            ],
+            ['sumcost' => NULL]
+        );
 
         return redirect()->route ('vehicle')->with('success', 'vehicle has been added successfully.');
     }
@@ -45,6 +56,8 @@ class VehicleController extends Controller
     {
         $data = Vehicle::findOrFail($id);
 
+        $data -> company = $request->company;
+        $data -> category = $request->category;
         $data -> model = $request->model;
         $data -> no_plate = $request->no_plate;
         $data -> roadtax_exp = $request->roadtax_exp;
@@ -54,6 +67,7 @@ class VehicleController extends Controller
         $data -> status = $request->status;
 
         $data->save();
+
         return redirect()->route ('vehicle')->with('success', 'vehicle has been updated successfully.');
     }
 
@@ -73,5 +87,13 @@ class VehicleController extends Controller
         // return $maintenance;
         
         return view('vehicle.showmaintenance', compact('maintenance'));
+    }
+
+    public function front($id)
+    {
+
+        $vehicle = Vehicle::find($id);
+        
+        return view('vehicle.front', compact('vehicle'));
     }
 }

@@ -9,45 +9,56 @@
 <div class="content">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-6">
-          <div class="card card-primary card-outline">
+        <div class="col-lg-4">
+          <div class="card card-primary card-outline text-white bg-primary">
             <div class="card-body">
-              <h5 class="card-title">Vehicle</h5>
+              <h5 class="card-title text-bold">Vehicles</h5>
 
               <p class="card-text">
                 {{App\Models\Vehicle::count()}} Vehicle
               </p>
 
-              <a href="/vehicle" class="card-link">List of Vehicle</a>
+              <a href="#" class="btn btn-light text-primary">List of Vehicle</a>
             </div>
           </div>
 
-          <div class="card card-primary card-outline">
+          <div class="card card-primary card-outline text-white bg-primary">
             <div class="card-body">
-              <h5 class="card-title">Driver</h5>
+              <h5 class="card-title text-bold">Drivers</h5>
 
               <p class="card-text">
                 {{App\Models\Driver::count()}} Driver
               </p>
-              <a href="/driver" class="card-link">List of Driver</a>
+              <a href="#" class="btn btn-light text-primary">List of Driver</a>
             </div>
           </div><!-- /.card -->
+
+          <div class="card border-primary mb-3">
+            <div class="card-header bg-secondary">Gas Cost</div>
+            <div class="card-body">
+              <h5 class="card-title">Total This Month</h5>
+              <h1><p class="card-text align-text-bottom">RM 300</p></h1>
+            </div>
+          </div>
         </div>
+
         <!-- /.col-md-6 -->
-        <div class="col-lg-6">
+        <div class="col-lg-8">
           <div class="card card-primary card-outline">
             <div class="card-header">
-              <h5 class="m-0">Unavailable Vehicle</h5>
+              <h5 class="m-0 bond">Unavailable Vehicles</h5>
             </div>
             <div class="card-body">
               <p class="card-text">
+                <ul></ul>
                 @foreach (App\Models\Vehicle::get() as $item)
                   @if ($item->status == 'Not Available')
                     <div>
-                      {{$item->model."-".$item->no_plate}}
+                      <li>{{$item->model."-".$item->no_plate}}</li>
                     </div>
                   @endif    
                 @endforeach
+              </ul>
               </p>
               <a href="#" class="btn btn-primary">See Available Vehicle List</a>
             </div>
@@ -55,13 +66,15 @@
 
           <div class="card card-primary card-outline">
             <div class="card-header">
-              <h5 class="m-0">Notification</h5>
+              <h5 class="m-0 bond">Notification</h5>
             </div>
             <div class="card-body">
-              <h6 class="card-title">Reminder for Vehicle due date (Roadtax)</h6>
 
-              <p class="card-text">
-                @php
+              <h6 class="card-title text-primary mb-2">Reminder for Vehicle due date (Roadtax)</h6>
+
+              <div class="card-text" style="width: 22em;">
+                <ul class="list-group list-group-flush">
+                  @php
                   function dateDifference($start_date, $end_date)
                   {
                   // calulating the difference in timestamps 
@@ -73,9 +86,9 @@
                   }
                 @endphp
 
-              @foreach (App\Models\Vehicle::get() as $item)
+                @foreach (App\Models\Vehicle::get() as $item)
 
-              @php
+                @php
   
                 $x = $item->roadtax_exp;
 
@@ -83,20 +96,20 @@
 
                 $dateDiff = dateDifference($y,$x);
 
-              @endphp
+                @endphp
 
-              <div>
-                @if ($dateDiff < 30)
-                {{$item->model."-".$item->no_plate." = in ".$dateDiff." days ----> URGENT"}}
-                @else
-                  {{$item->model."-".$item->no_plate." = in ".$dateDiff." days"}}
-                @endif
+                  @if ($dateDiff < 30)
+                  <li class="list-group-item bg-danger mb-1">{{$item->model."-".$item->no_plate}} {{"due date in ".$dateDiff. " days"}}</li>
+                  @else
+                  <li class="list-group-item bg-success mb-1">{{$item->model."-".$item->no_plate}} {{"due date in ".$dateDiff. " days"}}</li>
+                  @endif
+
+                  @endforeach
+
+                </ul>
               </div>
-    
-              @endforeach
-
-              </p>
             </div>
+            
           </div>
         </div>
         <!-- /.col-md-6 -->

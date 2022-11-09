@@ -23,6 +23,7 @@
         <thead>
         <tr>
           <th>No</th>
+          <th>Category</th>
           <th>Model</th>
           <th>No Plate</th>
           <th>Color</th>
@@ -30,7 +31,6 @@
           <th>Year Release</th>
           <th>Mileage</th>
           <th>Status</th>
-          <th>Total Monthly Gas Cost</th>
           <th>Maintenance History</th>
           <th>Action(s)</th>
         </tr>
@@ -45,6 +45,7 @@
       
             <tr>
               <td> {{ $no++ }} </td>
+              <td> {{ $row->category}} </td>
               <td> {{ $row->model}} </td>
               <td> {{ $row->no_plate}} </td>
               <td> {{ $row->color}} </td>
@@ -58,7 +59,6 @@
                 <th style="color : red">Not Available</th>
                 @endif
                 
-              <td> {{ $row->totalmonthly_gas}} </td>
               <td>
                 <a href="/showmaintenance/{{$row->id}}" class="btn btn-outline-primary">Show</i></a>
               </td>

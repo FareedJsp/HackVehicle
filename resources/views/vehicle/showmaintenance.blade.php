@@ -15,10 +15,10 @@
 
 <div class="card">
     <div class="card-header">
-      <h3 class="card-title">
+      {{-- <h3 class="card-title">
         @foreach($maintenance as $item)@endforeach
             {{$item->Vehicle->model." - ".$item->Vehicle->no_plate}}
-      </h3>
+      </h3> --}}
     </div>
     <!-- /.card-header -->
     <div class="card-body">

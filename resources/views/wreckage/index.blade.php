@@ -28,7 +28,6 @@
           <th>Location</th>
           <th>Image</th>
           <th>Title</th>
-          <th>Detail</th>
           <th>Description</th>
           <th>Action Needed</th>
           <th>Action(s)</th>
@@ -49,7 +48,7 @@
               <td> {{ $row->location ?? null}} </td>
               <td> <img src="/wreckage_images/{{ $row->wreckage_image ?? null}} " alt="" width="120"> </td>
               <td> {{ $row->wreckage_title}} </td>
-              <td> {{ $row->desciption}} </td>
+              <td> {{ $row->description}} </td>
               <td> {{ $row->action_needed}} </td>
               <td>
                 <a href="/editwreckage/{{$row->id}}" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></a>

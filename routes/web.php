@@ -1,12 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\PetrolController;
-use App\Http\Controllers\PublicController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\WreckageController;
 use App\Http\Controllers\MaintenanceController;
+use App\Http\Controllers\TotalPetrolController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,10 @@ Route::get('/test', function () {
     return view('test');
 });
 
+Route::get('/test2', function () {
+    return view('test2');
+});
+
 Route::get('/main', function () {
     return view('layouts.main');
 });
@@ -45,6 +50,12 @@ Route::post('/updatevehicle/{id}',[VehicleController::class,'update']);
 Route::get('/deletevehicle/{id}',[VehicleController::class,'destroy']);
 
 Route::get('/showmaintenance/{id}',[VehicleController::class,'show']);
+
+Route::get('/vehicle.front/{id}',[VehicleController::class,'front']);
+
+Route::get('/vehicletest', function () {
+    return view('vehicle.test');
+});
 
 //Maintenance
 
@@ -73,13 +84,14 @@ Route::get('/editpetrol/{id}',[PetrolController::class,'edit']);
 Route::post('/updatepetrol/{id}',[PetrolController::class,'update']);
 Route::get('/deletepetrol/{id}',[PetrolController::class,'destroy']);
 
-Route::get('/petrolfront', function () {
-    return view('petrol.front');
+Route::get('/gas', function () {
+    return view('petrol.gas');
 });
+Route::get('/totalpetrol',[TotalPetrolController::class,'index']);
+Route::get('/showgas',[TotalPetrolController::class,'thismonthindex']);
+Route::get('/showpetrol/{id}',[TotalPetrolController::class,'show']);
 
-// Route::get('/test',[PetrolController::class,'gastotal']);
-
-//wreckage report
+//Wreckage
 
 Route::get('/wreckage',[WreckageController::class,'index'])->name('wreckage');
 Route::get('/addwreckage',[WreckageController::class,'create']);
@@ -91,3 +103,6 @@ Route::get('/deletewreckage/{id}',[WreckageController::class,'destroy']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//user
+Route::get('/user',[UserController::class,'name']);

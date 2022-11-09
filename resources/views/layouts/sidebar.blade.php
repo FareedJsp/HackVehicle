@@ -1,9 +1,9 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="dist/img/android-auto.png" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">G-Tag</span>
-    </a>
+    </a>  
 
       <div class="sidebar">
   
@@ -81,7 +81,7 @@
         <nav class="mt-2">
           <ul class="nav nav-sidebar">
             <li class="nav-item">
-              <a href="/petrolfront" class="nav-link">
+              <a href="/gas" class="nav-link">
                 <i class="nav-icon fa-sharp fa-solid fa-gas-pump"></i>
                 <p>
                   Gas Data

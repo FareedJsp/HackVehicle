@@ -22,6 +22,7 @@ class DriverController extends Controller
     {
         $data = new Driver;
 
+        $data -> company = $request->company;
         $data -> name = $request->name;
         $data -> gender = $request->gender;
         $data -> birth_date = $request->birth_date;
@@ -46,6 +47,7 @@ class DriverController extends Controller
     {
         $data = Driver::findOrFail($id);
 
+        $data -> company = $request->company;
         $data -> name = $request->name;
         $data -> gender = $request->gender;
         $data -> birth_date = $request->birth_date;
@@ -66,5 +68,20 @@ class DriverController extends Controller
         $data->delete();
 
         return redirect()->route ('driver')->with('success', 'driver has been deleted successfully.');
+    }
+
+    //connect Flutter
+    public function getdriver(){
+        $result = [];
+        $result['status'] = false ;
+        $result['message'] = "something error";
+        
+        $data = Driver::get();
+        $result['data'] = $data ;
+        
+        $result['status'] = true ;
+        $result['message'] = "success";
+        
+        return response()->json($result);
     }
 }

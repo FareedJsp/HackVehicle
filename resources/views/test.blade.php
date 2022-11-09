@@ -166,4 +166,69 @@ function dateDifference($start_date, $end_date)
 
             @endforeach
 
+            <button type="button" class="btn btn-primary">{{$dateDiff}}</button>
+
+
+            @php
+            echo "<br>";
+            @endphp
+
+@foreach (App\Models\Petrol::get() as $item)
+@php
+    $b = $item->fill_date_time;
+    $c = Carbon::createFromFormat('Y-m-d H:i:s', $b)->format('Y-m');
+@endphp
+
+{{$c}}
+
+@php
+echo "<br>";
+@endphp
+
+{{$b}}
+
+@php
+echo "<br>";
+@endphp
+
+@php
+    var_dump($c);
+@endphp
+
+
+@php
+echo "<br>";
+@endphp
+
+@endforeach
+
+@foreach (App\Models\Driver::get() as $item)
+@php
+ 
+@endphp
+
+{{$item->birth_date}}
+
+@endforeach
+
+<ul class="pagination">
+  <li class="disabled"><a href="#">«</a></li>
+  <li class="active"><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+  <li><a href="#">»</a></li>
+</ul>
+
+@php
+echo "<br>";
+@endphp
+
+            @php
+                $data00 = DB::table('vehicle')->where('cost', null)->get();
+            @endphp
+
+            {{$data00}}
+
 @endsection

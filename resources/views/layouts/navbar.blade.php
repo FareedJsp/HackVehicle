@@ -7,6 +7,15 @@
       </li>
     </ul>
 
+    <ul class="navbar-nav ml-3" style="font-family: Baskerville font;">
+      <li class="nav-item">
+        @php
+            $name = DB::table('users')->first();
+        @endphp
+        <h2>{{$name->company}}</h2>
+      </li>
+    </ul>
+
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->

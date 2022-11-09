@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('drivers', function (Blueprint $table) {
             $table->id();
+            $table->string('company');
             $table->string('name');
             $table->enum('gender', ['male', 'female']);
             $table->date('birth_date');

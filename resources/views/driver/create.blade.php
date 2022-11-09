@@ -16,6 +16,15 @@
 
       <h4 class="mb-3 mt-3">Add Driver Data</h4>
 
+        @php
+            $company = DB::table('users')->first();
+        @endphp
+
+        <div class="mb-3">
+          <label class="form-label">Company</label>
+          <input type="text" class="form-control" name="company" value="{{$company->company}}"readonly>
+        </div>
+
         <div class="mb-3">
             <label class="form-label">Name</label>
             <input type="text" class="form-control" name="name">
