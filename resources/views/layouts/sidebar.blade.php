@@ -104,6 +104,14 @@
           </ul>
         </nav>
 
+        <nav class="mt-2">
+          <ul class="nav nav-sidebar">
+            <li class="nav-item">
+              <button href="/test">Test Button</button>
+            </li>
+          </ul>
+        </nav>
+
       </div>
       
   </aside>
