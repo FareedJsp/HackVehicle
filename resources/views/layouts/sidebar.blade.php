@@ -107,7 +107,7 @@
         <nav class="mt-2">
           <ul class="nav nav-sidebar">
             <li class="nav-item">
-              <a href="/test" class="btn btn-light text-primary">Test Button</a>
+              <a href="/testbtn" class="btn btn-light text-primary nav-link">Test Button</a>
             </li>
           </ul>
         </nav>

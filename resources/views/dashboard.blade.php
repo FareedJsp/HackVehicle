@@ -36,8 +36,10 @@
           <div class="card border-primary mb-3">
             <div class="card-header bg-secondary">Gas Cost</div>
             <div class="card-body">
-              <h5 class="card-title">Total This Month</h5>
-              <h1><p class="card-text align-text-bottom">RM 300</p></h1>
+              <h5 class="card-title">Total For All Vehicle This Month</h5>
+              <h1><p class="card-text align-text-bottom">
+                {{$petrol}}
+              </p></h1>
             </div>
           </div>
         </div>

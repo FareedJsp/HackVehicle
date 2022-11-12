@@ -17,6 +17,14 @@ class PetrolController extends Controller
         return view('petrol.index', compact('petrol'));
     }
 
+    public function dashboardtotal()
+    {
+        $petrol = Petrol::whereYear('fill_date_time', Carbon::now()->year)
+        ->whereMonth('fill_date_time', Carbon::now()->month)->sum('cost');
+
+        return view('dashboard', compact('petrol'));
+    }
+
     public function create()
     {
         return view('petrol.create');

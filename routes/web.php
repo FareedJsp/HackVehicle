@@ -28,8 +28,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-Route::get('/test', function () {
-    return view('test');
+Route::get('/testbtn', function () {
+    return view('testbutton');
 });
 
 Route::get('/test2', function () {
@@ -87,9 +87,11 @@ Route::get('/deletepetrol/{id}',[PetrolController::class,'destroy']);
 Route::get('/gas', function () {
     return view('petrol.gas');
 });
+
 Route::get('/totalpetrol',[TotalPetrolController::class,'index']);
 Route::get('/showgas',[TotalPetrolController::class,'thismonthindex']);
 Route::get('/showpetrol/{id}',[TotalPetrolController::class,'show']);
+Route::get('/dashboard',[PetrolController::class,'dashboardtotal']);
 
 //Wreckage
 
