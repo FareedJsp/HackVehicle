@@ -144,31 +144,6 @@ function dateDifference($start_date, $end_date)
             @endphp
 
 
-@php
-  $currentMonth = date('m');
-@endphp
-
-            @foreach (App\Models\Vehicle::get() as $item)
-            @php
-                $x1 = $item->id;
-
-                $data = DB::table('petrols')->where('vehicle_id', $x1)->whereMonth('fill_date_time', Carbon::now()->month)
-                ->get();
-
-                $kilo = $data->where('vehicle_id', $x1)->sum('cost');
-            @endphp
-
-            {{$kilo}}
-
-            @php
-            echo "<br>";
-            @endphp
-
-            @endforeach
-
-            <button type="button" class="btn btn-primary">{{$dateDiff}}</button>
-
-
             @php
             echo "<br>";
             @endphp
@@ -221,14 +196,5 @@ echo "<br>";
   <li><a href="#">»</a></li>
 </ul>
 
-@php
-echo "<br>";
-@endphp
-
-            @php
-                $data00 = DB::table('vehicle')->where('cost', null)->get();
-            @endphp
-
-            {{$data00}}
 
 @endsection
