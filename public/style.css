@@ -8,7 +8,13 @@
 
   .bond{
     color: #343a40;
+    /* color: #E39774; */
     font-weight: bold;
+  }
+
+  .sideb{
+    /* color: #E39774; */
+    background-color: #E39774;
   }
 
   /* vehicle front start */

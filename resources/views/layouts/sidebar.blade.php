@@ -1,9 +1,11 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
+    <div class="sideb">
     <a href="index3.html" class="brand-link">
-      <img src="dist/img/android-auto.png" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">G-Tag</span>
-    </a>  
+      <img src="dist/img/logo b.png" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light text-blue text-bold">G-Tag</span>
+    </a> 
+    </div>
 
       <div class="sidebar">
   

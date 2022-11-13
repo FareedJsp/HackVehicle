@@ -38,7 +38,7 @@
             <div class="card-body">
               <h5 class="card-title">Total For All Vehicle This Month</h5>
               <h1><p class="card-text align-text-bottom">
-                {{$petrol}}
+                {{"RM ".$petrol}}
               </p></h1>
             </div>
           </div>
@@ -52,7 +52,7 @@
             </div>
             <div class="card-body">
               <p class="card-text">
-                <ul></ul>
+                <ul>
                 @foreach (App\Models\Vehicle::get() as $item)
                   @if ($item->status == 'Not Available')
                     <div>
@@ -78,15 +78,14 @@
                 <ul class="list-group list-group-flush">
                   @php
                   function dateDifference($start_date, $end_date)
-                  {
+                    {
                   // calulating the difference in timestamps 
-                  $diff = strtotime($start_date) - strtotime($end_date);
-      
+                      $diff = strtotime($start_date) - strtotime($end_date);
                   // 1 day = 24 hours 
                   // 24 * 60 * 60 = 86400 seconds
-                  return ceil(abs($diff / 86400));
-                  }
-                @endphp
+                      return ceil(abs($diff / 86400));
+                    }
+                  @endphp
 
                 @foreach (App\Models\Vehicle::get() as $item)
 
@@ -106,7 +105,7 @@
                   <li class="list-group-item bg-success mb-1">{{$item->model."-".$item->no_plate}} {{"due date in ".$dateDiff. " days"}}</li>
                   @endif
 
-                  @endforeach
+                @endforeach
 
                 </ul>
               </div>
