@@ -14,7 +14,7 @@
   <div class="row">
     <div class="col-6">
 
-      @php
+        @php
             $company = DB::table('users')->first();
         @endphp
 

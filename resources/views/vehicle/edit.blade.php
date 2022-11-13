@@ -14,6 +14,15 @@
   <div class="row">
     <div class="col-6">
 
+      @php
+        $company = DB::table('users')->first();
+      @endphp
+
+      <div class="mb-3">
+        <label class="form-label">Company</label>
+        <input type="text" class="form-control" name="company" value="{{$company->company}}"readonly>
+      </div>
+
       <div class="mb-3">
         <label class="form-label">Category</label>
         <select class="form-control" name="category">
