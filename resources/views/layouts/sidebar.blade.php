@@ -33,8 +33,9 @@
               <span class="nav-text">Vehicle</span>
                 </a>
             <ul aria-expanded="false">
-              <li><a href="index.html">Dashboard Light</a></li>
-              <li><a href="index-2.html">Dashboard Dark</a></li>
+              <li><a href="/vehicle">All Vehicle List</a></li>
+              <li><a href="/vehicleavailable">Available</a></li>
+              <li><a href="/vehiclenotavailable">Not Available</a></li>
             </ul>
             </li>
 
@@ -43,8 +44,9 @@
               <span class="nav-text">Driver</span>
                 </a>
             <ul aria-expanded="false">
-              <li><a href="index.html">Dashboard Light</a></li>
-              <li><a href="index-2.html">Dashboard Dark</a></li>
+              <li><a href="/driver">All Driver List</a></li>
+              <li><a href="/driveravailable">Available</a></li>
+              <li><a href="/drivernotavailable">Not Available</a></li>
             </ul>
             </li>
 

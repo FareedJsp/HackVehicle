@@ -13,6 +13,18 @@ class DriverController extends Controller
         return view('driver.index', compact('driver'));
     }
 
+    public function available()
+    {
+        $driver = Driver::where('status', 'available')->get();
+        return view('driver.available', compact('driver'));
+    }
+
+    public function notavailable()
+    {
+        $driver = Driver::where('status', 'not available')->get();
+        return view('driver.notavailable', compact('driver'));
+    }
+
     public function create()
     {
         return view('driver.create');

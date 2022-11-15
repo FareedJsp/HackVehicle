@@ -79,6 +79,9 @@ Route::get('/editdriver/{id}',[DriverController::class,'edit']);
 Route::post('/updatedriver/{id}',[DriverController::class,'update']);
 Route::get('/deletedriver/{id}',[DriverController::class,'destroy']);
 
+Route::get('/driveravailable',[DriverController::class,'available']);
+Route::get('/drivernotavailable',[DriverController::class,'notavailable']);
+
 //Petrol
 
 Route::get('/petrol',[PetrolController::class,'index'])->name('petrol');
