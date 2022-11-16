@@ -13,6 +13,7 @@
     
 @endif
 
+<div class="container-fluid">
 <div class="card">
     <div class="card-header">
       <h3 class="card-title">@foreach ($petrol as $row)@endforeach{{$row->Vehicle->model ." ". $row->Vehicle->no_plate}}</h3>
@@ -57,5 +58,6 @@
     </div>
     <!-- /.card-body -->
   </div>
+</div>
 
 @endsection

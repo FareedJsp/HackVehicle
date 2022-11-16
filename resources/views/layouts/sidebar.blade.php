@@ -51,23 +51,7 @@
             <span class="nav-text">Gas Data</span>
           </a>
                       <ul aria-expanded="false">
-            <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Project<span class="badge badge-xs badge-danger">New</span></a>
-                              <ul aria-expanded="false">
-                                  <li><a href="project-list.html">Project List</a></li>
-                                  <li><a href="project-card.html">Project Card</a></li>
-                              </ul>
-                          </li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Shop</a>
-                              <ul aria-expanded="false">
-                                  <li><a href="ecom-product-grid.html">Product Grid</a></li>
-                <li><a href="ecom-product-list.html">Product List</a></li>
-                <li><a href="ecom-product-detail.html">Product Details</a></li>
-                <li><a href="ecom-product-order.html">Order</a></li>
-                <li><a href="ecom-checkout.html">Checkout</a></li>
-                <li><a href="ecom-invoice.html">Invoice</a></li>
-                <li><a href="ecom-customers.html">Customers</a></li>
-                              </ul>
-                          </li>
+                        <li><a href="/gas">Overall This Month</a></li>
                       </ul>
                   </li>
         

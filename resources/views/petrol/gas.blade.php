@@ -17,13 +17,19 @@
     
 @endif
 
-<div class="card">
-    <div class="card-header">
-      <h3 class="card-title">DataTable with default features</h3>
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header d-sm-flex d-block">
+      <div class="mr-auto mb-sm-0 mb-3">
+        <h4 class="card-title mb-2">Gas Data</h4>
+        <span>Monthly Expenses</span>
+      </div>
+      <a href="javascript:void(0);" class="btn btn-info light mr-3"><i class="las la-download scale3 mr-2"></i>Import Csv</a>
+      <a href="/adddriver" class="btn btn-info">+ Add Driver</a>
     </div>
-    <!-- /.card-header -->
     <div class="card-body">
-      <table id="example1" class="table table-bordered table-striped">
+      <div class="table-responsive">
+        <table class="table style-1" id="ListDatatableView">
         <thead>
         <tr>
           <th>No</th>
@@ -39,40 +45,6 @@
           @php
             $no = 1
           @endphp
-
-            {{-- @foreach ($totalp as $row)
-      
-            <tr>
-              <td> {{ $no++ }} </td>
-              <td> {{ $row->Vehicle->model ." ". $row->Vehicle->no_plate}} </td>
-                <td>
-                  @if ($row->sumcost == null)
-                    {{"No Data Yet"}}
-                  @else
-                  @php
-                    $data = DB::table('petrols')->where('vehicle_id', $row->vehicle_id)
-                            ->whereYear('fill_date_time', Carbon::now()->year)
-                            ->whereMonth('fill_date_time',Carbon::now()->month)
-                            ->sum('cost');
-                  @endphp
-                    {{$data}}
-                  @endif
-                </td>
-                <td><a href="/showpetrol/{{$row->id}}" class="btn btn-outline-primary">Show</i></a></td>
-              <td>
-                @php
-
-                    $a = DB::table('total_petrols')->where('vehicle_id', $row->vehicle_id)
-                                ->sum('sumcost');
-                @endphp
-
-                {{$a}}
-                
-              </td>
-              <td><a href="/showbymonth/{{$row->id}}" class="btn btn-outline-primary">Show</i></a></td>
-            </tr>
-
-            @endforeach --}}
 
             @foreach (App\Models\Vehicle::get() as $row)
 
@@ -109,10 +81,11 @@
                 
             @endforeach
 
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <!-- /.card-body -->
   </div>
+</div>
 
 @endsection
