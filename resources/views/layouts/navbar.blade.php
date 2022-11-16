@@ -4,7 +4,7 @@
 
 <div class="nav-header">
   <a href="index.html" class="brand-logo">
-    <svg class="logo-abbr" width="50" height="50" id="ea31a701-9428-471d-ad30-88b1b5045c8b" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 163.2212 139.5039">
+    <svg class="logo-abbr" height="50" id="ea31a701-9428-471d-ad30-88b1b5045c8b" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 163.2212 139.5039">
       <g>
         <path d="M924.4276,569.5755c-11.474,5.481-23.8015,7.2972-36.2693,7.317a90.5917,90.5917,0,0,1-39.42-8.4455,78.9908,78.9908,0,0,1-30.039-24.0131C808.3,530.55,804.6052,514.761,806.9239,497.5233c1.24-9.2171,4.9416-17.36,10.07-24.968,1.3427,1.5575,2.57,3.2359,4.0511,4.6482,3.4657,3.305,7.0529,6.4823,10.591,9.7114V503.202l.606-.0744q2.3034-9.7276,4.607-19.4554l1.1354.0612c.4688,15.7956,5.9936,29.4491,17.3553,40.3816,11.3165,10.889,25.1749,16.5743,40.5842,18.7588l.7584,5.0968q-.8484.1059-1.6983.2108-.6423.1482-1.2818.2984h-9.28l-.0538,1.2411,18.344.7181.7015-.0633,3.7639-.0975c-.5884,4.4424,3.3777,5.6545,5.7157,7.9938C916.6988,562.0792,920.579,565.8115,924.4276,569.5755Z" transform="translate(-806.2582 -437.3887)" fill="#023470"/>
         <path d="M924.4276,569.5755c-3.8486-3.764-7.7288-7.4963-11.5341-11.3035-2.338-2.3393-6.3041-3.5514-5.7157-7.9938l15-3.6017c1.091,1.894,1.8485,4.12,3.3388,5.6164,3.7111,3.7261,7.7558,7.12,11.6665,10.6471Z" transform="translate(-806.2582 -437.3887)" fill="#043e77"/>
@@ -816,10 +816,17 @@
                                     <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                     <span class="ml-2">Inbox </span>
                                 </a>
-                                <a href="page-login.html" class="dropdown-item ai-icon">
+                                <a class="dropdown-item ai-icon" href="{{ route('logout') }}" 
+                                onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">
+                   
                                     <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-                                    <span class="ml-2">Logout </span>
+                                    
+                                    <span class="ml-2">{{ __('Logout') }}</span>
                                 </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                  @csrf
+                                </form>
                             </div>
                         </li>
                     </ul>

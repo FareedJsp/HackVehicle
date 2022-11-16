@@ -24,6 +24,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login2', function () {
+    return view('auth.loginnext');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
