@@ -17,13 +17,13 @@ class VehicleController extends Controller
 
     public function available()
     {
-        $vehicle = Vehicle::where('status', 'available')->get();
+        $vehicle = Vehicle::where('status', 'Available')->get();
         return view('vehicle.available', compact('vehicle'));
     }
 
     public function notavailable()
     {
-        $vehicle = Vehicle::where('status', 'not available')->get();
+        $vehicle = Vehicle::where('status', 'Not Available')->get();
         return view('vehicle.notavailable', compact('vehicle'));
     }
 

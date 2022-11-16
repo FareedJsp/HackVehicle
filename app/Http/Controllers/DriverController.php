@@ -15,13 +15,13 @@ class DriverController extends Controller
 
     public function available()
     {
-        $driver = Driver::where('status', 'available')->get();
+        $driver = Driver::where('status', 'Available')->get();
         return view('driver.available', compact('driver'));
     }
 
     public function notavailable()
     {
-        $driver = Driver::where('status', 'not available')->get();
+        $driver = Driver::where('status', 'Not Available')->get();
         return view('driver.notavailable', compact('driver'));
     }
 
