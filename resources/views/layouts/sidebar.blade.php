@@ -20,11 +20,6 @@
             <ul aria-expanded="false">
               <li><a href="index.html">Dashboard Light</a></li>
               <li><a href="index-2.html">Dashboard Dark</a></li>
-              <li><a href="my-wallets.html">Wallet</a></li>
-              <li><a href="tranasactions.html">Transactions</a></li>
-              <li><a href="coin-details.html">Coin Details</a></li>
-              <li><a href="portofolio.html">Portofolio</a></li>
-              <li><a href="market-capital.html">Market Capital</a></li>
             </ul>
             </li>
 
@@ -56,35 +51,12 @@
             <span class="nav-text">Gas Data</span>
           </a>
                       <ul aria-expanded="false">
-                          <li><a href="app-profile.html">Profile</a></li>
-            <li><a href="post-details.html">Post Details</a></li>
-            <li><a href="page-chat.html">Chat<span class="badge badge-xs badge-danger">New</span></a></li>
             <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Project<span class="badge badge-xs badge-danger">New</span></a>
                               <ul aria-expanded="false">
                                   <li><a href="project-list.html">Project List</a></li>
                                   <li><a href="project-card.html">Project Card</a></li>
                               </ul>
                           </li>
-            <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">User<span class="badge badge-xs badge-danger">New</span></a>
-                              <ul aria-expanded="false">
-                                  <li><a href="user-list-datatable.html">User List</a></li>
-                                  <li><a href="user-list-column.html">User Card</a></li>
-                              </ul>
-                          </li>
-            <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Contact<span class="badge badge-xs badge-danger">New</span></a>
-                              <ul aria-expanded="false">
-                                  <li><a href="contact-list.html">Contact List</a></li>
-                                  <li><a href="contact-card.html">Contact Card</a></li>
-                              </ul>
-                          </li>
-                          <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
-                              <ul aria-expanded="false">
-                                  <li><a href="email-compose.html">Compose</a></li>
-                                  <li><a href="email-inbox.html">Inbox</a></li>
-                                  <li><a href="email-read.html">Read</a></li>
-                              </ul>
-                          </li>
-                          <li><a href="app-calender.html">Calendar</a></li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Shop</a>
                               <ul aria-expanded="false">
                                   <li><a href="ecom-product-grid.html">Product Grid</a></li>
@@ -106,10 +78,6 @@
                       <ul aria-expanded="false">
                           <li><a href="chart-flot.html">Flot</a></li>
                           <li><a href="chart-morris.html">Morris</a></li>
-                          <li><a href="chart-chartjs.html">Chartjs</a></li>
-                          <li><a href="chart-chartist.html">Chartist</a></li>
-                          <li><a href="chart-sparkline.html">Sparkline</a></li>
-                          <li><a href="chart-peity.html">Peity</a></li>
                       </ul>
                   </li>
 
@@ -120,10 +88,6 @@
                               <ul aria-expanded="false">
                                   <li><a href="chart-flot.html">Flot</a></li>
                                   <li><a href="chart-morris.html">Morris</a></li>
-                                  <li><a href="chart-chartjs.html">Chartjs</a></li>
-                                  <li><a href="chart-chartist.html">Chartist</a></li>
-                                  <li><a href="chart-sparkline.html">Sparkline</a></li>
-                                  <li><a href="chart-peity.html">Peity</a></li>
                               </ul>
                           </li>
               </ul>

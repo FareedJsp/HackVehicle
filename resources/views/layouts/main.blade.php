@@ -22,6 +22,9 @@
 
   <!-- Font Awesome Icons -->
 
+  <link rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css')}}">
+  <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
+
   <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon.png')}}">
 	<link rel="stylesheet" href="{{asset('vendor/chartist/css/chartist.min.css')}}">
 	<link href="{{asset('vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
@@ -29,10 +32,6 @@
 
   <link rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css')}}">
   <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
-
-  <!-- DataTables -->
-
-  <!-- Theme style -->
 
   <link href="{{asset('css/style.css')}}" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('style.css')}}">

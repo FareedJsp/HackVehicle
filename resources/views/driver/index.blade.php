@@ -49,23 +49,23 @@
                     @foreach ($driver as $row)
                       <tr>
                         <td>
-                          <h6>{{ $no++ }}</h6>
+                          {{ $no++ }}
                         </td>
                         <td>
                           <div class="media style-1">
                             <div class="media-body">
-                              <h6>{{$row->name}}</h6>
+                              {{$row->name}}
                             </div>
                           </div>
                         </td>
                         <td>
                           <div>
-                            <h6>{{$row->gender}}</h6>
+                            {{$row->gender}}
                           </div>
                         </td>
                         <td>
                           <div>
-                            <h6>{{$row->age()}}</h6>
+                            {{$row->age()}}
                           </div>
                         </td>
                           @if ($row->status == 'Available')
@@ -75,12 +75,12 @@
                           @endif
                         <td>
                           <div>
-                            <h6>{{$row->username}}</h6>
+                            {{$row->username}}
                           </div>
                         </td>
                         <td>
                           <div>
-                            <h6>{{$row->password}}</h6>
+                            {{$row->password}}
                           </div>
                         </td>
                         <td>

@@ -61,6 +61,9 @@ Route::get('/vehicletest', function () {
     return view('vehicle.test');
 });
 
+Route::get('/vehicleavailable',[VehicleController::class,'available']);
+Route::get('/vehiclenotavailable',[VehicleController::class,'notavailable']);
+
 //Maintenance
 
 Route::get('/maintenance',[MaintenanceController::class,'index'])->name('maintenance');

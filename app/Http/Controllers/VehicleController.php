@@ -15,6 +15,18 @@ class VehicleController extends Controller
         return view('vehicle.index', compact('vehicle'));
     }
 
+    public function available()
+    {
+        $vehicle = Vehicle::where('status', 'available')->get();
+        return view('vehicle.available', compact('vehicle'));
+    }
+
+    public function notavailable()
+    {
+        $vehicle = Vehicle::where('status', 'not available')->get();
+        return view('vehicle.notavailable', compact('vehicle'));
+    }
+
     public function create()
     {
         return view('vehicle.create');
