@@ -12,8 +12,8 @@
 </div>
     
 @endif
-
-<div class="card">
+<div class="container-fluid">
+  <div class="card">
     <div class="card-header">
       {{-- <h3 class="card-title">
         @foreach($maintenance as $item)@endforeach
@@ -62,5 +62,5 @@
     </div>
     <!-- /.card-body -->
   </div>
-
+</div>
 @endsection
