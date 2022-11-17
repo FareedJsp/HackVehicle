@@ -27,7 +27,7 @@
             </li>
 
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-              <i class="flaticon-144-layout"></i>
+              <i class="flaticon-120-diskette"></i>
               <span class="nav-text">Vehicle</span>
                 </a>
             <ul aria-expanded="false">
@@ -42,7 +42,7 @@
             </li>
 
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-              <i class="flaticon-144-layout"></i>
+              <i class="flaticon-153-user"></i>
               <span class="nav-text">Driver</span>
                 </a>
             <ul aria-expanded="false">
@@ -58,7 +58,7 @@
 
         <li class="nav-label">Vehicle Data</li>
           <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-          <i class="flaticon-077-menu-1"></i>
+          <i class="flaticon-092-money"></i>
             <span class="nav-text">Gas Data</span>
           </a>
                       <ul aria-expanded="false">
@@ -67,7 +67,7 @@
                   </li>
         
                   <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-            <i class="flaticon-061-puzzle"></i>
+            <i class="flaticon-381-folder-9"></i>
             <span class="nav-text">Maintenance</span>
           </a>
                       <ul aria-expanded="false">
@@ -77,7 +77,7 @@
                   </li>
 
                   <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                    <i class="flaticon-061-puzzle"></i>
+                    <i class="flaticon-161-alarm"></i>
                     <span class="nav-text">Wreckage</span>
                   </a>
                               <ul aria-expanded="false">
