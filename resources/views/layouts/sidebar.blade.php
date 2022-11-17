@@ -32,8 +32,12 @@
                 </a>
             <ul aria-expanded="false">
               <li><a href="/vehicle">All Vehicle List</a></li>
-              <li><a href="/vehicleavailable">Available</a></li>
-              <li><a href="/vehiclenotavailable">Not Available</a></li>
+              <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Status</a>
+                <ul aria-expanded="false">
+                  <li><a href="/vehicleavailable">Available</a></li>
+                  <li><a href="/vehiclenotavailable">Not Available</a></li>
+                </ul>
+            </li>
             </ul>
             </li>
 
@@ -43,8 +47,12 @@
                 </a>
             <ul aria-expanded="false">
               <li><a href="/driver">All Driver List</a></li>
-              <li><a href="/driveravailable">Available</a></li>
-              <li><a href="/drivernotavailable">Not Available</a></li>
+              <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Status</a>
+                <ul aria-expanded="false">
+                  <li><a href="/driveravailable">Available</a></li>
+                  <li><a href="/drivernotavailable">Not Available</a></li>
+                </ul>
+            </li>  
             </ul>
             </li>
 

@@ -671,7 +671,7 @@
               <div class="pulse-css"></div>
                             </a>
             <div class="dropdown-menu dropdown-menu-right">
-                                <div id="dlab_W_Notification1" class="widget-media dz-scroll p-3 height380">
+              <div id="DZ_W_TimeLine111" class="widget-timeline dz-scroll style-1 height370">
                 <ul class="timeline">
                   @php
                       $vehicle = DB::table('vehicles')->orderBy('roadtax_exp', 'asc')->get();
@@ -686,23 +686,25 @@
                     $dateDiff = dateDifference($y,$x);
 
                   @endphp
-
-                  <li>
-                    <div class="timeline-panel">
-                      <div class="media mr-2 media-info">
-                        {{$item->model}}
-                      </div>
-                      <div class="media-body">
-                        <h6 class="mb-1">{{$dateDiff." more days"}}</h6>
-                        <small class="d-block">{{"Due Date : ".$item->roadtax_exp}}</small>
-                      </div>
-                    </div>
-                  </li>
-                  @endforeach
-                </ul>
+                    <li>
+                        @if ($dateDiff <= 30)
+                          <div class="timeline-badge danger"></div>
+                        @else
+                          <div class="timeline-badge success"></div>
+                        @endif
+                        <a class="timeline-panel text-muted" href="#">
+                          <strong class="text-info">{{$item->model}}</strong>
+                          @if ($dateDiff <= 30)
+                          <span class="badge badge-xs badge-danger">Urgent</span>
+                          @endif
+                          <h6 class="mb-0">Renew Roadtax</h6>
+                          <p class="mb-0">{{$dateDiff." more days"}}</p>
+                        </a>
+                    </li>
+                    @endforeach
               </div>
-                                <a class="all-notification" href="javascript:void(0)">See all notifications <i class="ti-arrow-right"></i></a>
-                            </div>
+                  <a class="all-notification" href="javascript:void(0)">See all notifications <i class="ti-arrow-right"></i></a>            
+            </div>
           </li>
           
 
