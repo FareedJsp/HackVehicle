@@ -671,8 +671,9 @@
               <div class="pulse-css"></div>
                             </a>
             <div class="dropdown-menu dropdown-menu-right">
-              <div id="DZ_W_TimeLine111" class="widget-timeline dz-scroll style-1 height370">
+              <div id="DZ_W_TimeLine111" class="widget-timeline dz-scroll style-1 height370 mt-3">
                 <ul class="timeline">
+                  
                   @php
                       $vehicle = DB::table('vehicles')->orderBy('roadtax_exp', 'asc')->get();
                   @endphp
@@ -686,6 +687,7 @@
                     $dateDiff = dateDifference($y,$x);
 
                   @endphp
+
                     <li>
                         @if ($dateDiff <= 30)
                           <div class="timeline-badge danger"></div>
@@ -695,15 +697,15 @@
                         <a class="timeline-panel text-muted" href="#">
                           <strong class="text-info">{{$item->model}}</strong>
                           @if ($dateDiff <= 30)
-                          <span class="badge badge-xs badge-danger">Urgent</span>
+                            <span class="badge badge-xs badge-danger">Urgent</span>
                           @endif
-                          <h6 class="mb-0">Renew Roadtax</h6>
-                          <p class="mb-0">{{$dateDiff." more days"}}</p>
+                            <h6 class="mb-0">Renew Roadtax</h6>
+                            <p class="mb-0">{{$dateDiff." more days"}}</p>
                         </a>
                     </li>
                     @endforeach
               </div>
-                  <a class="all-notification" href="javascript:void(0)">See all notifications <i class="ti-arrow-right"></i></a>            
+                <a class="all-notification" href="javascript:void(0)">See all notifications <i class="ti-arrow-right"></i></a>            
             </div>
           </li>
           
