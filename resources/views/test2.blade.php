@@ -2,8 +2,7 @@
 
 @section('content')
 
-<link href="{{asset('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')}}" rel="stylesheet">
-<div class="container" id="frontv">
+<div class="container-fluid" id="frontv">
 <div class="row">
   <!-- BEGIN SEARCH RESULT -->
   <div class="col-md-12">
@@ -88,10 +87,10 @@
                     Order by <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" role="menu">
-                    <li class="dropdown-item"><a href="#">Name</a></li>
-                    <li class="dropdown-item"><a href="#">Date</a></li>
-                    <li class="dropdown-item"><a href="#">View</a></li>
-                    <li class="dropdown-item"><a href="#">Rating</a></li>
+                    <li><a class="dropdown-item" href="#">Name</a></li>
+                    <li><a class="dropdown-item" href="#">Date</a></li>
+                    <li><a class="dropdown-item" href="#">View</a></li>
+                    <li><a class="dropdown-item" href="#">Rating</a></li>
                   </ul>
                 </div>
               </div>
@@ -169,14 +168,15 @@
             <!-- END TABLE RESULT -->
             
             <!-- BEGIN PAGINATION -->
-              <ul class="pagination">
-                <li class="disabled paginate_button"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-              </ul>
-       
+            <ul class="pagination">
+              <li class="page-item disabled"><a class="page-link" href="#">«</a></li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item"><a class="page-link" href="#">»</a></li>
+            </ul>
             <!-- END PAGINATION -->
           </div>
           <!-- END RESULT -->

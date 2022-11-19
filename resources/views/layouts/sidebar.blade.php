@@ -8,7 +8,7 @@
             $user = DB::table('users')->get()->first();
         @endphp
         <div class="image-bx">
-          <img src="images/user.png" alt="">
+          <img src="/images/user.png" alt="">
           <a href="javascript:void(0);"><i class="fa fa-cog" aria-hidden="true"></i></a>
         </div>
         <h5 class="name"><span class="font-w400">Hello,</span> {{$user->name}}</h5>
@@ -85,6 +85,10 @@
                                   <li><a href="chart-morris.html">Morris</a></li>
                               </ul>
                           </li>
+
+                  <li class="nav-label">components</li>
+                  <li><a href="/testbtn">test</a></li>
+
               </ul>
 
       <div class="copyright">

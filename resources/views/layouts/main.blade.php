@@ -36,6 +36,10 @@
   <link href="{{asset('css/style.css')}}" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('style.css')}}">
 
+  <!-- front -->
+  
+  <link href={{asset('"https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"')}} rel="stylesheet">
+
 </head>
 <body>
 

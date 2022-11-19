@@ -712,7 +712,7 @@
 
             <li class="nav-item dropdown header-profile">
                 <a class="nav-link" href="#" role="button" data-toggle="dropdown">
-                  <img src="images/user.png" width="20" alt="">
+                  <img src="/images/user.png" width="20" alt="">
               <div class="header-info">
                 <span>{{$user->name}}</span>
                 <small>Administrator</small>

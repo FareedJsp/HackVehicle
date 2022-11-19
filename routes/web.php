@@ -24,14 +24,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login2', function () {
-    return view('auth.loginnext');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
 Route::get('/testbtn', function () {
     return view('testbutton');
 });
@@ -40,12 +32,8 @@ Route::get('/test2', function () {
     return view('test2');
 });
 
-Route::get('/test3', function () {
-    return view('test3');
-});
-
-Route::get('/main', function () {
-    return view('layouts.main');
+Route::get('/front', function () {
+    return view('vehicle.front');
 });
 
 //Vehicle
@@ -59,7 +47,7 @@ Route::get('/deletevehicle/{id}',[VehicleController::class,'destroy']);
 
 Route::get('/showmaintenance/{id}',[VehicleController::class,'show']);
 
-Route::get('/vehicle.front/{id}',[VehicleController::class,'front']);
+// Route::get('/front/{id}',[VehicleController::class,'front']);
 
 Route::get('/vehicletest', function () {
     return view('vehicle.test');
