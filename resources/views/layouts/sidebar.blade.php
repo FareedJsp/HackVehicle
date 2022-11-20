@@ -70,21 +70,21 @@
             <i class="flaticon-381-folder-9"></i>
             <span class="nav-text">Maintenance</span>
           </a>
-                      <ul aria-expanded="false">
+                      {{-- <ul aria-expanded="false">
                           <li><a href="chart-flot.html">Flot</a></li>
                           <li><a href="chart-morris.html">Morris</a></li>
-                      </ul>
+                      </ul> --}}
                   </li>
 
                   <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-161-alarm"></i>
                     <span class="nav-text">Wreckage</span>
                   </a>
-                              <ul aria-expanded="false">
-                                  <li><a href="chart-flot.html">Flot</a></li>
-                                  <li><a href="chart-morris.html">Morris</a></li>
-                              </ul>
-                          </li>
+                        {{-- <ul aria-expanded="false">
+                            <li><a href="chart-flot.html">Flot</a></li>
+                            <li><a href="chart-morris.html">Morris</a></li>
+                        </ul> --}}
+                  </li>
 
                   <li class="nav-label">components</li>
                   <li><a href="/testbtn">test</a></li>

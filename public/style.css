@@ -57,3 +57,9 @@ body #frontv{
     }
 
   /* vehicle front end */
+
+  .aa2{
+      font-weight: bold !important;
+      color: black;
+      font-size: 1.125rem;
+  }

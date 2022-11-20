@@ -112,11 +112,10 @@
                                 <strong>Other Detail :</strong>
                             </div>
                         </div>
-                        <div class="row mb-5">
+                        <div class="row mb-4">
                             <div class="mt-4 col-xl-6 col-lg-6 col-md-6 col-sm-6">                             
-                                <div class="mb-4">
-                                    <p class="mb-2">Mileage :</p> 
-                                    <h4 class="text-black">{{$item->mileage}}</h4>
+                                <div class="mb-5">
+                                    <p>Mileage : <span class="aa2">{{$item->mileage}}</span></p>  
                                 </div>
                                 <div class="d-flex">
                                     <div class="dt-icon mr-3 bgl-danger">
@@ -130,7 +129,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="mt-4 col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex flex-wrap align-items-end">
+                        </div>
+                        <div class="row">
+                            <div class="mt-4 col-4 d-flex flex-wrap align-items-end">
                                 @php
                                     $data = DB::table('petrols')->where('vehicle_id', $item->id)->whereYear('fill_date_time', Carbon::now()->year)
                                                 ->whereMonth('fill_date_time',Carbon::now()->month)
@@ -150,9 +151,16 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row mb-5">
-
+                            <div class="col d-flex align-items-center justify-content-end">
+                                <div class="rounded-button d-flex">
+                                    <div class="mr-2">
+                                        <button type="button" class="btn btn-rounded btn-outline-primary">Maintenance Record</button>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn btn-rounded btn-outline-secondary">Wreckage Record</button>
+                                    </div>  
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
