@@ -15,6 +15,12 @@ class VehicleController extends Controller
         return view('vehicle.index', compact('vehicle'));
     }
 
+    public function indextest()
+    {
+        $vehicle = Vehicle::get();
+        return view('vehicle.test', compact('vehicle'));
+    }
+
     public function available()
     {
         $vehicle = Vehicle::where('status', 'Available')->get();
@@ -104,7 +110,7 @@ class VehicleController extends Controller
     public function front($id)
     {
 
-        $vehicle = Vehicle::find($id);
+        $vehicle = Vehicle::where('id', $id)->get();
         
         return view('vehicle.front', compact('vehicle'));
     }

@@ -11,25 +11,19 @@
         <div class="row">
           <!-- BEGIN FILTERS -->
           <div class="col-md-3">
-            <h2 class="grid-title"><i class="fa fa-filter"></i> Filters</h2>
+            <h3 class="grid-title"><i class="fa fa-filter"></i> Filters</h3>
             <hr>
             
             <!-- BEGIN FILTER BY CATEGORY -->
             <h4>By category:</h4>
             <div class="checkbox">
-              <label><input type="checkbox" class="icheck"> Application</label>
+              <label><input type="checkbox" class="icheck"> Standard </label>
             </div>
             <div class="checkbox">
-              <label><input type="checkbox" class="icheck"> Design</label>
+              <label><input type="checkbox" class="icheck"> Lorry </label>
             </div>
             <div class="checkbox">
-              <label><input type="checkbox" class="icheck"> Desktop</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" class="icheck"> Management</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" class="icheck"> Mobile</label>
+              <label><input type="checkbox" class="icheck"> Van </label>
             </div>
             <!-- END FILTER BY CATEGORY -->
             
@@ -63,9 +57,10 @@
             <!-- END FILTER BY PRICE -->
           </div>
           <!-- END FILTERS -->
+          
           <!-- BEGIN RESULT -->
           <div class="col-md-9">
-            <h2><i class="fa fa-file-o"></i> Result</h2>
+            <h3><i class="fa fa-file-o"></i> Result</h3>
             <hr>
             <!-- BEGIN SEARCH INPUT -->
             <div class="input-group">

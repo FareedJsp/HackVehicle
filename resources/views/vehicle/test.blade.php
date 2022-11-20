@@ -13,191 +13,75 @@
     
 @endif
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container" id="frontv">
-<div class="row">
-  <!-- BEGIN SEARCH RESULT -->
-  <div class="col-md-12">
-    <div class="grid search">
-      <div class="grid-body">
-        <div class="row">
-          <!-- BEGIN FILTERS -->
-          <div class="col-md-3">
-            <h2 class="grid-title"><i class="fa fa-filter"></i> Filters</h2>
-            <hr>
-            
-            <!-- BEGIN FILTER BY CATEGORY -->
-            <h4>By category:</h4>
-            <div class="checkbox">
-              <label><input type="checkbox" class="icheck"> Application</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" class="icheck"> Design</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" class="icheck"> Desktop</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" class="icheck"> Management</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" class="icheck"> Mobile</label>
-            </div>
-            <!-- END FILTER BY CATEGORY -->
-            
-            <div class="padding"></div>
-            
-            <!-- BEGIN FILTER BY DATE -->
-            <h4>By date:</h4>
-            From
-            <div class="input-group date form_date" data-date="2014-06-14T05:25:07Z" data-date-format="dd-mm-yyyy" data-link-field="dtp_input1">
-              <input type="text" class="form-control">
-              <span class="input-group-addon bg-blue"><i class="fa fa-th"></i></span>
-            </div>
-            <input type="hidden" id="dtp_input1" value="">
-            
-            To
-            <div class="input-group date form_date" data-date="2014-06-14T05:25:07Z" data-date-format="dd-mm-yyyy" data-link-field="dtp_input2">
-              <input type="text" class="form-control">
-              <span class="input-group-addon bg-blue"><i class="fa fa-th"></i></span>
-            </div>
-            <input type="hidden" id="dtp_input2" value="">
-            <!-- END FILTER BY DATE -->
-            
-            <div class="padding"></div>
-            
-            <!-- BEGIN FILTER BY PRICE -->
-            <h4>By price:</h4>
-            Between <div id="price1">$300</div> to <div id="price2">$800</div>
-            <div class="slider-primary">
-              <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
-            </div>
-            <!-- END FILTER BY PRICE -->
-          </div>
-          <!-- END FILTERS -->
-          <!-- BEGIN RESULT -->
-          <div class="col-md-9">
-            <h2><i class="fa fa-file-o"></i> Result</h2>
-            <hr>
-            <!-- BEGIN SEARCH INPUT -->
-            <div class="input-group">
-              <input type="text" class="form-control" value="web development">
-              <span class="input-group-btn">
-                <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
-              </span>
-            </div>
-            <!-- END SEARCH INPUT -->
-            <p>Showing all results matching "web development"</p>
-            
-            <div class="padding"></div>
-            
-            <div class="row">
-              <!-- BEGIN ORDER RESULT -->
-              <div class="col-sm-6">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    Order by <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Name</a></li>
-                    <li><a href="#">Date</a></li>
-                    <li><a href="#">View</a></li>
-                    <li><a href="#">Rating</a></li>
-                  </ul>
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header d-sm-flex d-block">
+      <div class="mr-auto mb-sm-0 mb-3">
+        <h4 class="card-title mb-2">Vehicle List</h4>
+        <span>List of Vehicle With Status</span>
+      </div>
+      <a href="javascript:void(0);" class="btn btn-info light mr-3"><i class="las la-download scale3 mr-2"></i>Import Csv</a>
+      <a href="/addvehicle" class="btn btn-info">+ Add Vehicle</a>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table style-1" id="ListDatatableView">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>VEHICLE</th>
+              <th class="text-right">STATUS</th>
+              <th class="text-right">DETAIL</th>
+              <th class="text-right">ACTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            @php
+              $no = 1
+            @endphp
+
+          @foreach ($vehicle as $row)
+            <tr>
+              <td>
+                {{ $no++ }}
+              </td>
+              <td>
+                <div>
+                  {{$row->model."-".$row->no_plate}}
                 </div>
-              </div>
-              <!-- END ORDER RESULT -->
-              
-              <div class="col-md-6 text-right">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-default active"><i class="fa fa-list"></i></button>
-                  <button type="button" class="btn btn-default"><i class="fa fa-th"></i></button>
+              </td>
+                @if ($row->status == 'Available')
+                <td class="text-right" style="color : green">Available</td>
+                @elseif($row->status == 'Not Available')
+                <td class="text-right" style="color : red">Not Available</td>
+                @endif
+              <td class="text-right">
+                <div>
+                  <a href="/front/{{$row->id}}" class="btn btn-outline-primary">Show Detail</i></a>
                 </div>
-              </div>
-            </div>
-            
-            <!-- BEGIN TABLE RESULT -->
-            <div class="table-responsive">
-              <table class="table table-hover">
-                <tbody><tr>
-                  <td class="number text-center">1</td>
-                  <td class="image"><img src="https://via.placeholder.com/400x300/FF8C00" alt=""></td>
-                  <td class="product"><strong>Product 1</strong><br>This is the product description.</td>
-                  <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span></td>
-                  <td class="price text-right">$350</td>
-                </tr>
-                <tr>
-                  <td class="number text-center">2</td>
-                  <td class="image"><img src="https://via.placeholder.com/400x300/5F9EA0" alt=""></td>
-                  <td class="product"><strong>Product 2</strong><br>This is the product description.</td>
-                  <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></span></td>
-                  <td class="price text-right">$1,050</td>
-                </tr>
-                <tr>
-                  <td class="number text-center">3</td>
-                  <td class="image"><img src="https://via.placeholder.com/400x300" alt=""></td>
-                  <td class="product"><strong>Product 3</strong><br>This is the product description.</td>
-                  <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></span></td>
-                  <td class="price text-right">$550</td>
-                </tr>
-                <tr>
-                  <td class="number text-center">4</td>
-                  <td class="image"><img src="https://via.placeholder.com/400x300/8A2BE2" alt=""></td>
-                  <td class="product"><strong>Product 4</strong><br>This is the product description.</td>
-                  <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span></td>
-                  <td class="price text-right">$330</td>
-                </tr>
-                <tr>
-                  <td class="number text-center">5</td>
-                  <td class="image"><img src="https://via.placeholder.com/400x300" alt=""></td>
-                  <td class="product"><strong>Product 5</strong><br>This is the product description.</td>
-                  <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></td>
-                  <td class="price text-right">$540</td>
-                </tr>
-                <tr>
-                  <td class="number text-center">6</td>
-                  <td class="image"><img src="https://via.placeholder.com/400x300/6495ED" alt=""></td>
-                  <td class="product"><strong>Product 6</strong><br>This is the product description.</td>
-                  <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span></td>
-                  <td class="price text-right">$870</td>
-                </tr>
-                <tr>
-                  <td class="number text-center">7</td>
-                  <td class="image"><img src="https://via.placeholder.com/400x300/DC143C" alt=""></td>
-                  <td class="product"><strong>Product 7</strong><br>This is the product description.</td>
-                  <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></span></td>
-                  <td class="price text-right">$620</td>
-                </tr>
-                <tr>
-                  <td class="number text-center">8</td>
-                  <td class="image"><img src="https://via.placeholder.com/400x300/9932CC" alt=""></td>
-                  <td class="product"><strong>Product 8</strong><br>This is the product description.</td>
-                  <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span></td>
-                  <td class="price text-right">$1,550</td>
-                </tr>
-              </tbody></table>
-            </div>
-            <!-- END TABLE RESULT -->
-            
-            <!-- BEGIN PAGINATION -->
-            <ul class="pagination pagination-sm inline">
-              <li class="disabled"><a href="#">«</a></li>
-              <li class="active"><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li><a href="#">»</a></li>
-            </ul>
-            <!-- END PAGINATION -->
-          </div>
-          <!-- END RESULT -->
-        </div>
+              </td>
+              <td>
+                <div class="d-flex action-button float-right">
+                  <a href="/editvehicle/{{$row->id}}" class="btn btn-info btn-xs light px-2">
+                    <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 3C17.2626 2.73735 17.5744 2.52901 17.9176 2.38687C18.2608 2.24473 18.6286 2.17157 19 2.17157C19.3714 2.17157 19.7392 2.24473 20.0824 2.38687C20.4256 2.52901 20.7374 2.73735 21 3C21.2626 3.26264 21.471 3.57444 21.6131 3.9176C21.7553 4.26077 21.8284 4.62856 21.8284 5C21.8284 5.37143 21.7553 5.73923 21.6131 6.08239C21.471 6.42555 21.2626 6.73735 21 7L7.5 20.5L2 22L3.5 16.5L17 3Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </a>
+                  <a href="/deletevehicle/{{$row->id}}" class="ml-2 btn btn-xs px-2 light btn-danger">
+                    <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3 6H5H21" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-  <!-- END SEARCH RESULT -->
-</div>
 </div>
 
 @endsection

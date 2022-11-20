@@ -12,8 +12,8 @@
     <li class="list-group-item"><a href="/addmaintenance" >add maintenance</a></li>
     <li class="list-group-item"><a href="/addwreckage" >add wreckage</a></li>
     <li class="list-group-item"><a href="/test3" >testbootstrapadminlte</a></li>
-    <li class="list-group-item"><a href="/front" >front</a></li>
-  </ul>  
+    <li class="list-group-item"><a href="/vehicletest" >front</a></li>
+</ul>
 
 </div>
 @endsection

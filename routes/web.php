@@ -32,8 +32,8 @@ Route::get('/test2', function () {
     return view('test2');
 });
 
-Route::get('/front', function () {
-    return view('vehicle.front');
+Route::get('/test3', function () {
+    return view('test3');
 });
 
 //Vehicle
@@ -47,11 +47,9 @@ Route::get('/deletevehicle/{id}',[VehicleController::class,'destroy']);
 
 Route::get('/showmaintenance/{id}',[VehicleController::class,'show']);
 
-// Route::get('/front/{id}',[VehicleController::class,'front']);
+Route::get('/front/{id}',[VehicleController::class,'front']);
 
-Route::get('/vehicletest', function () {
-    return view('vehicle.test');
-});
+Route::get('/vehicletest',[VehicleController::class,'indextest']);
 
 Route::get('/vehicleavailable',[VehicleController::class,'available']);
 Route::get('/vehiclenotavailable',[VehicleController::class,'notavailable']);
