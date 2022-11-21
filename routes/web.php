@@ -47,7 +47,7 @@ Route::get('/deletevehicle/{id}',[VehicleController::class,'destroy']);
 
 Route::get('/showmaintenance/{id}',[VehicleController::class,'show']);
 
-Route::get('/front/{id}',[VehicleController::class,'front']);
+Route::get('/detail/{id}',[VehicleController::class,'front']);
 
 Route::get('/vehicletest',[VehicleController::class,'indextest']);
 

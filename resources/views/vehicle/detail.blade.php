@@ -71,7 +71,11 @@
                         </span>
                         <span class="float-right">
                             <strong>Status:</strong>
-                            <span class="badge badge-info d-sm-inline-block d-none">{{$item->status}}</span>
+                            @if ($item->status == 'Available')
+                                <span class="badge badge-succes d-sm-inline-block d-none">{{$item->status}}</span>
+                            @else
+                                <span class="badge badge-danger d-sm-inline-block d-none">{{$item->status}}</span>
+                            @endif                         
                         </span>
                     </div>
                     <div class="card-body">
@@ -154,10 +158,10 @@
                             <div class="col d-flex align-items-center justify-content-end">
                                 <div class="rounded-button d-flex">
                                     <div class="mr-2">
-                                        <button type="button" class="btn btn-rounded btn-outline-primary">Maintenance Record</button>
+                                        <button type="button" class="btn btn-rounded btn-outline-primary"><a href="/showmaintenance/{{$item->id}}">Maintenance Record</a></button>
                                     </div>
                                     <div>
-                                        <button type="button" class="btn btn-rounded btn-outline-secondary">Wreckage Record</button>
+                                        <button type="button" class="btn btn-rounded btn-outline-secondary"><a href="/showmaintenance/{{$item->id}}">Wreckage Record</a></button>
                                     </div>  
                                 </div>
                             </div>
