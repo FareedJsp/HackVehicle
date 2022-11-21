@@ -16,11 +16,20 @@ use App\Http\Controllers\MaintenanceController;
 |
 */
 
+//driver
 Route::get('/getdriver',[DriverController::class, 'getdriver']);
 
+//vehicle
+Route::get('/getvehicle',[VehicleController::class, 'getvehicle']);
+
+//Maintenance
 Route::get('/getdataMaintenance',[MaintenanceController::class, 'getdataMaintenance']);
 Route::post('/adddataMaintenance',[MaintenanceController::class, 'adddataMaintenance']);
 Route::PUT('/updatedataMaintenance',[MaintenanceController::class, 'updatedataMaintenance']);
+
+//Wreckage
+
+//Gas Data
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

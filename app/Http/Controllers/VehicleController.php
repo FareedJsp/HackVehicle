@@ -108,4 +108,19 @@ class VehicleController extends Controller
         
         return view('vehicle.detail', compact('vehicle'));
     }
+
+    //connect Flutter
+    public function getvehicle(){
+        $result = [];
+        $result['status'] = false ;
+        $result['message'] = "something error";
+        
+        $data = Vehicle::get();
+        $result['data'] = $data ;
+        
+        $result['status'] = true ;
+        $result['message'] = "success";
+        
+        return response()->json($result);
+    }
 }
