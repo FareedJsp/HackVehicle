@@ -100,12 +100,11 @@
                                     <h4 class="text-black">{{$item->color}}</h4>
                                 </div>
                             </div>
-                            <div class="mt-4 col-xl-6 col-lg-6 col-md-12 col-sm-12 d-flex justify-content-lg-end justify-content-md-center justify-content-xs-start">
+                            <div class="mt-4 col-xl-6 col-lg-6 col-md-12 col-sm-12 d-flex justify-content-lg-center justify-content-md-center justify-content-xs-start">
                                 <div class="row align-items-center">
                                     <div class="col-sm"> 
                                         <div class="brand-logo mb-3">
-                                            <img class="logo-abbr mr-2" width="50" src="/images/logo.png" alt="">
-                                            <img class="logo-compact" width="110" src="/images/logo-text.png" alt="">
+                                            <img class="logo-compact" height="200" src="/images/cardummy.png" alt="">
                                         </div>
                                     </div>
                                 </div>
