@@ -45,6 +45,16 @@ class VehicleController extends Controller
         $data -> vehicle_year = $request->vehicle_year;
         $data -> mileage = $request->mileage;
         $data -> status = $request->status;
+
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $name = date('YmdHis').'.'.$file->getClientOriginalExtension();
+            $file->move(public_path(). '/vehicle_images', $name);
+            $image = $name;
+
+            $data -> image = $image;
+        }
+
         $data->save();
 
         $gas = TotalPetrol::firstOrCreate(
@@ -77,6 +87,18 @@ class VehicleController extends Controller
         $data -> vehicle_year = $request->vehicle_year;
         $data -> mileage = $request->mileage;
         $data -> status = $request->status;
+
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $name = date('YmdHis').'.'.$file->getClientOriginalExtension();
+            $file->move(public_path(). '/vehicle_images', $name);
+            $image = $name;
+
+        }else{
+            $image = $request->image;
+        }
+
+        $data -> image = $image;
 
         $data->save();
 

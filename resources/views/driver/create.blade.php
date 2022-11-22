@@ -11,10 +11,24 @@
   @csrf
 
 <div class="container-fluid">
+
+  <div class="row page-titles mx-0">
+    <div class="col-sm-6 p-md-0">
+        <div class="welcome-text">
+            <h4>Hi, welcome back!</h4>
+            <p class="mb-0">Add Driver Data</p>
+        </div>
+    </div>
+    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Vehicle</a></li>
+            <li class="breadcrumb-item active"><a href="javascript:void(0)">Add Data</a></li>
+        </ol>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-6">
-
-      <h4 class="mb-3 mt-3">Add Driver Data</h4>
 
         @php
             $company = DB::table('users')->first();
@@ -28,6 +42,11 @@
         <div class="mb-3">
             <label class="form-label">Name</label>
             <input type="text" class="form-control" name="name">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Image (optional)</label>
+          <input type="file" class="form-control-file" name="image" value="default">
         </div>
 
           <div class="mb-3">

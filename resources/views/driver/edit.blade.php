@@ -26,6 +26,11 @@
             <input type="text" class="form-control" name="name" value="{{$driver->name}}" readonly>
         </div>
 
+        <div class="mb-3">
+          <label class="form-label">Image (optional)</label>
+          <input type="file" class="form-control-file" name="image" value="{{$driver->image}}">
+        </div>
+
           <div class="mb-3">
             <label class="form-label">Gender</label>
             <select class="form-control" name="gender">

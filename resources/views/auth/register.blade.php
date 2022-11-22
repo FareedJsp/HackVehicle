@@ -9,6 +9,9 @@
                     <div class="row no-gutters">
                         <div class="col-xl-12">
                             <div class="auth-form">
+                                <form method="POST" action="{{ route('register') }}">
+                                    @csrf
+
                                 <div class="text-center mb-3">
                                     <img src="images/logo.png" alt="" height="100">
                                 </div>
@@ -65,6 +68,7 @@
                                 <div class="new-account mt-3">
                                     <p>Already have an account? <a class="text-primary" href="/login">Sign in</a></p>
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>

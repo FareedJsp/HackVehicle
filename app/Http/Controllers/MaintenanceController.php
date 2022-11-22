@@ -148,10 +148,10 @@ class MaintenanceController extends Controller
         $result['status'] = false ;
         $result['message'] = "something error";
 
-        $data = News::findOrFail($id);
+        $data = Maintenance::findOrFail($id);
 
         $images = null;
-        if($request->hasFile('maintanence_image')){
+        if($request->hasFile('maintenance_image')){
             $file = $request->file('maintenance_image');
             $name = date('YmdHis').'.'.$file->getClientOriginalExtension();
             $file->move(public_path(). '/maintenance_images', $name);
@@ -169,7 +169,7 @@ class MaintenanceController extends Controller
         $data -> maintenance_date = $request->maintenance_date;
         $data -> maintenance_detail = $request->maintenance_detail;
         $data -> maintenance_cost = $request->maintenance_cost;
-        $news->save();
+        $data->save();
 
 
         $result['data'] = $data ;

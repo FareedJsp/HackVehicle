@@ -237,9 +237,7 @@
         </h5>
       </div>
       <div class="d-flex align-items-center">
-        <a href="javascript:void(0);" class="btn btn-xs btn-primary light mr-1">Today</a>
-        <a href="javascript:void(0);" class="btn btn-xs btn-primary light mr-1">Month</a>
-        <a href="javascript:void(0);" class="btn btn-xs btn-primary light">Year</a>
+        <a href="/calendar" class="btn btn-xs btn-primary light mr-1">Calendar</a>
       </div>
     </div>
   </div>

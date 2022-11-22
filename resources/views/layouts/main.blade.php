@@ -33,8 +33,14 @@
   <link rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css')}}">
   <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
 
+  <!-- CSS -->
+
   <link href="{{asset('css/style.css')}}" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('style.css')}}">
+
+  <!-- Calendar -->
+
+  <link href="{{asset('vendor/fullcalendar/css/main.min.css')}}" rel="stylesheet">
 
   <!-- front -->
   
@@ -42,6 +48,20 @@
 
 </head>
 <body>
+
+  <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+      <div class="sk-three-bounce">
+          <div class="sk-child sk-bounce1"></div>
+          <div class="sk-child sk-bounce2"></div>
+          <div class="sk-child sk-bounce3"></div>
+      </div>
+  </div>
+  <!--*******************
+      Preloader end
+  ********************-->
 
 @if (Auth::check())
 
@@ -68,7 +88,7 @@
   ***********************************-->
   <div class="footer">
       <div class="copyright">
-            <p>Copyright © Designed &amp; Developed by <a href="../index.htm" target="_blank">DexignZone</a> 2021</p>
+            <p>G-Tag-2022</p>
       </div>
   </div>
   <!--**********************************
@@ -101,6 +121,11 @@
 <script src="{{asset('js/deznav-init.js')}}"></script>
 <script src="{{asset('js/demo.js')}}"></script>
 {{-- <script src="{{asset('js/styleSwitcher.js')}}"></script> --}}
+
+<!-- CALENDAR -->
+<script src="{{asset('vendor/moment/moment.min.js')}}"></script>
+<script src="{{asset('vendor/fullcalendar/js/main.min.js')}}"></script>
+<script src="{{asset('js/plugins-init/fullcalendar-init.js')}}"></script>
 
 </body>
 </html>

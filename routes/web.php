@@ -25,18 +25,6 @@ Route::get('/', function () {
     return redirect()->away('http://fareed.dfa-learning.sabahloka.com/');
 });
 
-Route::get('/testbtn', function () {
-    return view('testbutton');
-});
-
-Route::get('/test2', function () {
-    return view('test2');
-});
-
-Route::get('/test3', function () {
-    return view('test3');
-});
-
 //Vehicle
 
 Route::get('/vehicle',[VehicleController::class,'index'])->name('vehicle');
@@ -109,3 +97,23 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //user
 Route::get('/user',[UserController::class,'name']);
+
+//Extra Function
+
+Route::get('/calendar', function () {
+    return view('calendar');
+});
+
+//Other Test
+
+Route::get('/testbtn', function () {
+    return view('testbutton');
+});
+
+Route::get('/test2', function () {
+    return view('test2');
+});
+
+Route::get('/test3', function () {
+    return view('test3');
+});

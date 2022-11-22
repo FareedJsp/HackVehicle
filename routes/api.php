@@ -29,6 +29,9 @@ Route::post('/adddataMaintenance',[MaintenanceController::class, 'adddataMainten
 Route::PUT('/updatedataMaintenance',[MaintenanceController::class, 'updatedataMaintenance']);
 
 //Wreckage
+Route::get('/getdataWreckage',[WreckageController::class, 'getdataWreckage']);
+Route::post('/adddataWreckage',[WreckageController::class, 'adddataWreckage']);
+Route::PUT('/updatedataWreckage',[WreckageController::class, 'updatedataWreckage']);
 
 //Gas Data
 

@@ -80,6 +80,7 @@ class WreckageController extends Controller
         $data -> wreckage_image = $image;
         
         $data->save();
+
         return redirect()->route ('wreckage')->with('success', 'wreckage report has been updated successfully.');
     }
 
@@ -89,5 +90,93 @@ class WreckageController extends Controller
         $data->delete();
 
         return redirect()->route ('wreckage')->with('success', 'wreckage report has been deleted successfully.');
+    }
+
+    public function getdataWreckage(){
+        $result = [];
+        $result['status'] = false ;
+        $result['message'] = "something error";
+        
+        $data = Wreckage::get();
+        $result['data'] = $data ;
+        
+        $result['status'] = true ;
+        $result['message'] = "success";
+        
+        return response()->json($result);
+    }
+
+    public function adddataWreckage(Request $request){
+        $result = [];
+        $result['status'] = false ;
+        $result['message'] = "something error";
+
+        $data = Wreckage::findOrFail($id);
+
+        $data -> vehicle_id = $request->vehicle_id;
+        $data -> driver_id = $request->driver_id;
+        $data -> location = $request->location;
+        $data -> wreckage_title = $request->wreckage_title;
+        $data -> description = $request->description;
+        $data -> action_needed = $request->action_needed;
+        $image = null;
+
+        if($request->hasFile('wreckage_image')){
+            $file = $request->file('wreckage_image');
+            $name = date('YmdHis').'.'.$file->getClientOriginalExtension();
+            $file->move(public_path(). '/wreckage_images', $name);
+            $image = $name;
+
+        }else{
+            $image = $request->wreckage_image;
+        }
+
+        $data -> wreckage_image = $image;
+        
+        $data->save();
+
+
+        $result['data'] = $data ;
+        $result['status'] = true ;
+        $result['message'] = "succesfully added data";
+            
+        return response()->json($result);
+    }
+
+    public function updatedataWreckage(Request $request, $id){
+        $result = [];
+        $result['status'] = false ;
+        $result['message'] = "something error";
+
+        $data = Wreckage::findOrFail($id);
+
+        $data -> vehicle_id = $request->vehicle_id;
+        $data -> driver_id = $request->driver_id;
+        $data -> location = $request->location;
+        $data -> wreckage_title = $request->wreckage_title;
+        $data -> description = $request->description;
+        $data -> action_needed = $request->action_needed;
+        $image = null;
+
+        if($request->hasFile('wreckage_image')){
+            $file = $request->file('wreckage_image');
+            $name = date('YmdHis').'.'.$file->getClientOriginalExtension();
+            $file->move(public_path(). '/wreckage_images', $name);
+            $image = $name;
+
+        }else{
+            $image = $request->wreckage_image;
+        }
+
+        $data -> wreckage_image = $image;
+        
+        $data->save();
+
+
+        $result['data'] = $data ;
+        $result['status'] = true ;
+        $result['message'] = "succesfully update data";
+            
+        return response()->json($result);
     }
 }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('company');
             $table->string('name');
+            $table->string('image')->default('user.png');
             $table->enum('gender', ['male', 'female']);
             $table->date('birth_date');
             $table->enum('status', ['Available', 'Not Available']);

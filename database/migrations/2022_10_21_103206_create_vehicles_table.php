@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('company');
             $table->string('model');
+            $table->string('image')->default('cardummy.png');
             $table->enum('category', ['Standard', 'Van', 'Lorry']);
             $table->char('no_plate', 20);
             $table->date('roadtax_exp');

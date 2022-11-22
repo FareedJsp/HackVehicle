@@ -42,6 +42,15 @@ class DriverController extends Controller
         $data -> username = $request->username;
         $data -> password = $request->password;
 
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $name = date('YmdHis').'.'.$file->getClientOriginalExtension();
+            $file->move(public_path(). '/driver_images', $name);
+            $image = $name;
+
+            $data -> image = $image;
+        }
+
         // return $data;
 
         $data->save();
@@ -66,6 +75,16 @@ class DriverController extends Controller
         $data -> status = $request->status;
         $data -> username = $request->username;
         $data -> password = $request->password;
+
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $name = date('YmdHis').'.'.$file->getClientOriginalExtension();
+            $file->move(public_path(). '/driver_images', $name);
+            $image = $name;
+
+        }else{
+            $image = $request->image;
+        }
 
         // return $data;
 

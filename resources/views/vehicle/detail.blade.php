@@ -72,7 +72,7 @@
                         <span class="float-right">
                             <strong>Status:</strong>
                             @if ($item->status == 'Available')
-                                <span class="badge badge-succes d-sm-inline-block d-none">{{$item->status}}</span>
+                                <span class="badge badge-success d-sm-inline-block d-none">{{$item->status}}</span>
                             @else
                                 <span class="badge badge-danger d-sm-inline-block d-none">{{$item->status}}</span>
                             @endif                         
@@ -102,9 +102,9 @@
                             </div>
                             <div class="mt-4 col-xl-6 col-lg-6 col-md-12 col-sm-12 d-flex justify-content-lg-center justify-content-md-center justify-content-xs-start">
                                 <div class="row align-items-center">
-                                    <div class="col-sm"> 
+                                    <div class="col-sm">
                                         <div class="brand-logo mb-3">
-                                            <img class="logo-compact" height="200" src="/images/cardummy.png" alt="">
+                                            <img src="/vehicle_images/{{$item->image}}" alt="" height="200">
                                         </div>
                                     </div>
                                 </div>
