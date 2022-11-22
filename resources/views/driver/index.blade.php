@@ -1,9 +1,5 @@
 @extends('layouts.main')
 
-@section('title' , 'driver')
-@section('heading' , 'Driver List')
-@section('breadcrumb' , 'Driver List')
-
 @section('content')
 
 @if ($message = Session::get('success'))
@@ -23,7 +19,6 @@
                   <h4 class="card-title mb-2">Driver List</h4>
                   <span>List of Driver With Status</span>
                 </div>
-                <a href="javascript:void(0);" class="btn btn-info light mr-3"><i class="las la-download scale3 mr-2"></i>Import Csv</a>
                 <a href="/adddriver" class="btn btn-info">+ Add Driver</a>
               </div>
               <div class="card-body">

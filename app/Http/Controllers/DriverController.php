@@ -13,6 +13,12 @@ class DriverController extends Controller
         return view('driver.index', compact('driver'));
     }
 
+    public function indexCard()
+    {
+        $driver = Driver::get();
+        return view('driver.card', compact('driver'));
+    }
+
     public function available()
     {
         $driver = Driver::where('status', 'Available')->get();

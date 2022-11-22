@@ -55,6 +55,7 @@ Route::get('/deletemaintenance/{id}',[MaintenanceController::class,'destroy']);
 //Driver
 
 Route::get('/driver',[DriverController::class,'index'])->name('driver');
+Route::get('/drivercard',[DriverController::class,'indexCard']);
 Route::get('/adddriver',[DriverController::class,'create']);
 Route::post('/insertdriver',[DriverController::class,'store']);
 Route::get('/editdriver/{id}',[DriverController::class,'edit']);
@@ -108,6 +109,10 @@ Route::get('/calendar', function () {
 
 Route::get('/testbtn', function () {
     return view('testbutton');
+});
+
+Route::get('/test', function () {
+    return view('test');
 });
 
 Route::get('/test2', function () {

@@ -3,8 +3,6 @@
 
 <head>
   <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta charset="utf-8">
 	<meta name="keywords" content="">
 	<meta name="author" content="">
 	<meta name="robots" content="">
@@ -18,37 +16,31 @@
 
   <!-- Google Font: Source Sans Pro -->
 
-  <link rel="stylesheet" href="{{asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback')}}">
-
   <!-- Font Awesome Icons -->
 
-  <link rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css')}}">
-  <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
-
-  <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon.png')}}">
-	<link rel="stylesheet" href="{{asset('vendor/chartist/css/chartist.min.css')}}">
-	<link href="{{asset('vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
-	<link href="{{asset('vendor/owl-carousel/owl.carousel.css')}}" rel="stylesheet">
-
-  <link rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css')}}">
-  <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
-
-  <!-- Calendar -->
-
-  <link href="{{asset('vendor/fullcalendar/css/main.min.css')}}" rel="stylesheet">
-
-  <!-- Data Tables -->
-
-  <link href="{{asset('vendor/datatables/css/jquery.dataTables.min.css')}}" rel="stylesheet">
-
-  <!-- front -->
-  
-  <link href={{asset('"https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"')}} rel="stylesheet">
+    {{-- <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon.png')}}"> --}}
+    {{-- <link rel="stylesheet" href="{{asset('vendor/chartist/css/chartist.min.css')}}"> --}}
+	{{-- <link href="{{asset('vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet"> --}}
 
   <!-- CSS -->
 
-  <link href="{{asset('css/style.css')}}" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('style.css')}}">
+    
+
+  <!-- Calendar -->
+
+  <!-- Data Tables -->
+
+    {{-- <link href="{{asset('vendor/datatables/css/jquery.dataTables.min.css')}}" rel="stylesheet"> --}}
+
+  <!-- front -->
+
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+	<link rel="stylesheet" href="vendor/chartist/css/chartist.min.css">
+    <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+	<link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    {{-- <link href="{{asset('css/style.css')}}" rel="stylesheet"> --}}
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+  
 
 </head>
 <body>
@@ -120,15 +112,9 @@
 <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script src="{{asset('vendor/global/global.min.js')}}"></script>
 <script src="{{asset('vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
-<script src="{{asset('vendor/lightgallery/js/lightgallery-all.min.js')}}"></script>
 <script src="{{asset('js/custom.min.js')}}"></script>
 <script src="{{asset('js/deznav-init.js')}}"></script>
 <script src="{{asset('js/demo.js')}}"></script>
-
-<!-- CALENDAR -->
-<script src="{{asset('vendor/moment/moment.min.js')}}"></script>
-<script src="{{asset('vendor/fullcalendar/js/main.min.js')}}"></script>
-<script src="{{asset('js/plugins-init/fullcalendar-init.js')}}"></script>
 
 <!-- Datatable -->
 <script src="{{asset('vendor/chart.js/Chart.bundle.min.js')}}"></script>
