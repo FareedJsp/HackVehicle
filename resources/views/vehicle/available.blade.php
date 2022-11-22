@@ -20,7 +20,6 @@
         <h4 class="card-title mb-2">Vehicle List</h4>
         <span>List of Vehicle With Status</span>
       </div>
-      <a href="javascript:void(0);" class="btn btn-info light mr-3"><i class="las la-download scale3 mr-2"></i>Import Csv</a>
       <a href="/addvehicle" class="btn btn-info">+ Add Vehicle</a>
     </div>
     <div class="card-body">

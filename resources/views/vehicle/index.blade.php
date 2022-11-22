@@ -1,9 +1,4 @@
 @extends('layouts.main')
-
-@section('title' , 'Vehicle')
-@section('heading' , 'Vehicle List')
-@section('breadcrumb' , 'Vehicle List')
-
 @section('content')
 
 @if ($message = Session::get('success'))
