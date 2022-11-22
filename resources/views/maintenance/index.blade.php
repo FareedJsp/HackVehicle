@@ -9,10 +9,12 @@
 @endif
 
 <div class="card">
-    <div class="card-header">
-      <h3 class="card-title">DataTable with default features</h3>
+  <div class="card-header d-sm-flex d-block">
+    <div class="mr-auto mb-sm-0 mb-3">
+      <h4 class="card-title mb-2">Maintenance Data</h4>
+      <span>All Record</span>
     </div>
-    <!-- /.card-header -->
+  </div>
     <div class="card-body">
       <table id="example1" class="table table-bordered table-striped">
         <thead>

@@ -8,10 +8,10 @@
             <div class="card">
                 <div class="card-body d-flex justify-content-between align-items-center">
                     <div>
-                        <h4>User Card View</h4>
-                        <span>Lorem ipsum sit amet</span>
+                        <h4>Driver List</h4>
+                        <span>Card View</span>
                     </div>
-                    <a href="javascript:void(0);" class="btn btn-info light">+ Add Card</a>
+                    <a href="/adddriver" class="btn btn-info light">+ Add Driver</a>
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
         </div>
         @endforeach
     </div>
-    <nav>
+    {{-- <nav>
         <ul class="pagination pagination-gutter pagination-primary no-bg">
             <li class="page-item page-indicator">
                 <a class="page-link" href="javascript:void(0)">
@@ -81,7 +81,7 @@
                     <i class="la la-angle-right"></i></a>
             </li>
         </ul>
-    </nav>
+    </nav> --}}
 </div>
 
 @endsection

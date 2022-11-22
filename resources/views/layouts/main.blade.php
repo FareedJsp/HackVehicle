@@ -117,7 +117,7 @@
 @endif
 
 <!-- REQUIRED SCRIPTS -->
-<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script data-cfasync="false" src="{{asset('../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script>
 <script src="{{asset('vendor/global/global.min.js')}}"></script>
 <script src="{{asset('vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
 <script src="{{asset('vendor/lightgallery/js/lightgallery-all.min.js')}}"></script>
@@ -125,10 +125,7 @@
 <script src="{{asset('js/deznav-init.js')}}"></script>
 <script src="{{asset('js/demo.js')}}"></script>
 
-<!-- CALENDAR -->
-<script src="{{asset('vendor/moment/moment.min.js')}}"></script>
-<script src="{{asset('vendor/fullcalendar/js/main.min.js')}}"></script>
-<script src="{{asset('js/plugins-init/fullcalendar-init.js')}}"></script>
+@yield('javascripts')
 
 <!-- Datatable -->
 <script src="{{asset('vendor/chart.js/Chart.bundle.min.js')}}"></script>

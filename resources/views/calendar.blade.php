@@ -146,3 +146,12 @@
 </div>
 
 @endsection
+
+@section('javascripts')
+
+<!-- CALENDAR -->
+<script src="{{asset('vendor/moment/moment.min.js')}}"></script>
+<script src="{{asset('vendor/fullcalendar/js/main.min.js')}}"></script>
+<script src="{{asset('js/plugins-init/fullcalendar-init.js')}}"></script>
+
+@endsection
