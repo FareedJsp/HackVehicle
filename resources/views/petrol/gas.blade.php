@@ -1,9 +1,4 @@
 @extends('layouts.main')
-
-@section('title' , 'gas')
-@section('heading' , 'Gas Data')
-@section('breadcrumb' , 'gas data')
-
 @section('content')
 
 @php
@@ -24,8 +19,7 @@
         <h4 class="card-title mb-2">Gas Data</h4>
         <span>Monthly Expenses</span>
       </div>
-      <a href="javascript:void(0);" class="btn btn-info light mr-3"><i class="las la-download scale3 mr-2"></i>Import Csv</a>
-      <a href="/adddriver" class="btn btn-info">+ Add Driver</a>
+      <a href="/addpetrol" class="btn btn-info">+ Add Data Manually</a>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -35,8 +29,8 @@
           <th>No</th>
           <th>Vehicle</th>
           <th>Total Gas This Month</th>
-          <th>Receipt Received This Month</th>
           <th>Total Gas Overall</th>
+          <th>Receipt Received This Month</th>
           <th>Detail Gas By Month</th>
         </tr>
         </thead>
@@ -63,9 +57,6 @@
                     {{$data}}
                   @endif
                 </td>
-                <td>
-                  
-                  <a href="/showpetrol/{{$row->id}}" class="btn btn-outline-primary">Show</i></a></td>
               <td>
                 @php
 
@@ -76,7 +67,12 @@
                 {{$a}}
                 
               </td>
-              <td><a href="/showbymonth/{{$row->id}}" class="btn btn-outline-primary">Show</i></a></td>
+              <td>  
+                <a href="/showpetrol/{{$row->id}}" class="btn btn-outline-primary">Show</i></a>
+              </td>
+              <td>
+                <a href="/showbymonth/{{$row->id}}" class="btn btn-outline-primary">Show</i></a>
+              </td>
             </tr>
                 
             @endforeach

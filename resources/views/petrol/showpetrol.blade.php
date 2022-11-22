@@ -15,12 +15,16 @@
 
 <div class="container-fluid">
 <div class="card">
-    <div class="card-header">
-      <h3 class="card-title">@foreach ($petrol as $row)@endforeach{{$row->Vehicle->model ." ". $row->Vehicle->no_plate}}</h3>
+  <div class="card-header d-sm-flex d-block">
+    <div class="mr-auto mb-sm-0 mb-3">
+      @foreach ($petrol as $row)@endforeach
+      <h4 class="card-title mb-2">{{$row->Vehicle->no_plate}}</h4>
+      <span>{{$row->Vehicle->model}}</span>
     </div>
-    <!-- /.card-header -->
+    <a href="/addpetrol" class="btn btn-info">+ Add Data Manually</a>
+  </div>
     <div class="card-body">
-      <table id="example1" class="table table-bordered table-striped">
+      <table class="table style-1 table-bordered" id="ListDatatableView">
         <thead>
         <tr>
           <th>No</th>

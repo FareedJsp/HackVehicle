@@ -1,9 +1,4 @@
 @extends('layouts.main')
-
-@section('title' , 'gas')
-@section('heading' , 'Gas Data')
-@section('breadcrumb' , 'gas data')
-
 @section('content')
 
 @if ($message = Session::get('success'))
@@ -13,13 +8,18 @@
     
 @endif
 
+<div class="container-fluid">
 <div class="card">
-    <div class="card-header">
-      <h3 class="card-title">DataTable with default features</h3>
+  <div class="card-header d-sm-flex d-block">
+    <div class="mr-auto mb-sm-0 mb-3">
+      <h4 class="card-title mb-2">Gas Data</h4>
+      <span>All Data Mixed</span>
     </div>
-    <!-- /.card-header -->
+    <a href="/addpetrol" class="btn btn-info">+ Add Data Manually</a>
+  </div>
     <div class="card-body">
-      <table id="example1" class="table table-bordered table-striped">
+      <div class="table-responsive">
+      <table class="table style-1" id="ListDatatableView">
         <thead>
         <tr>
           <th>No</th>
@@ -56,8 +56,10 @@
 
         </tbody>
       </table>
+      </div>
     </div>
     <!-- /.card-body -->
   </div>
+</div>
 
 @endsection

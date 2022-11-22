@@ -63,40 +63,41 @@
             <label class="form-label">No Plate</label>
             <input type="text" class="form-control" name="no_plate">
           </div>
-
-        <div class="mb-3">
-          <label class="form-label">Road Tax Expiration Date</label>
-          <input type="date" class="form-control" name="roadtax_exp">
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Color</label>
-          <input type="text" class="form-control" name="color">
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Vehicle Year</label>
-          <input type="number" class="form-control" name="vehicle_year">
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Mileage (KM)</label>
-          <input type="number" class="form-control" name="mileage">
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Status</label>
-          <select class="form-control" name="status">
-            <option selected>Open this select menu</option>
-            <option value="Available">Available</option>
-            <option value="Not Available">Not Available</option>
-          </select>
-        </div>
-
-          <button type="submit" class="btn btn-primary btns">Submit</button>
-
         
     </div>
+    <div class="col-6">
+      <div class="mb-3">
+        <label class="form-label">Color</label>
+        <input type="text" class="form-control" name="color">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Vehicle Year</label>
+        <input type="number" class="form-control" name="vehicle_year">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Mileage (KM)</label>
+        <input type="number" class="form-control" name="mileage">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Status</label>
+        <select class="form-control" name="status">
+          <option selected>Open this select menu</option>
+          <option value="Available">Available</option>
+          <option value="Not Available">Not Available</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Road Tax Expiration Date</label>
+        <input type="date" class="form-control" name="roadtax_exp">
+      </div>
+
+      <button type="submit" class="btn btn-primary btns">Submit</button>
+      
+  </div>
   </div>
 </div>
 </form>
