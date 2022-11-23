@@ -81,7 +81,7 @@ Route::get('/gas', function () {
 Route::get('/totalpetrol',[TotalPetrolController::class,'index']);
 Route::get('/showgas',[TotalPetrolController::class,'thismonthindex']);
 Route::get('/showpetrol/{id}',[TotalPetrolController::class,'show']);
-Route::get('/dashboard',[PetrolController::class,'dashboardtotal']);
+Route::get('/dashboard',[PetrolController::class,'indexDashboard']);
 
 //Wreckage
 

@@ -46,14 +46,13 @@
     <div class="row page-titles mx-0">
         <div class="col-sm-6 p-md-0">
             <div class="welcome-text">
-                <h4>Hi, welcome back!</h4>
-                <p class="mb-0">Your business dashboard template</p>
+                <h4>Vehicle Overall Detail</h4>
             </div>
         </div>
         <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Layout</a></li>
-                <li class="breadcrumb-item active"><a href="javascript:void(0)">Blank</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Vehicle</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Detail</a></li>
             </ol>
         </div>
     </div>
@@ -157,10 +156,16 @@
                             <div class="col d-flex align-items-center justify-content-end">
                                 <div class="rounded-button d-flex">
                                     <div class="mr-2">
-                                        <button type="button" class="btn btn-rounded btn-outline-primary"><a href="/showmaintenance/{{$item->id}}">Maintenance Record</a></button>
+                                        <button type="button" class="btn btn-info">
+                                            <a class="text-white" href="/showmaintenance/{{$item->id}}">Maintenance Record</a>
+                                            <span class="btn-icon-right"><i class="fa-regular fa-file"></i></span>
+                                        </button>
                                     </div>
                                     <div>
-                                        <button type="button" class="btn btn-rounded btn-outline-secondary"><a href="/showmaintenance/{{$item->id}}">Wreckage Record</a></button>
+                                        <button type="button" class="btn btn-primary">
+                                            <a class="text-white" href="/showmaintenance/{{$item->id}}">Wreckage Record</a>
+                                            <span class="btn-icon-right"><i class="fa-regular fa-file"></i></span>
+                                        </button>
                                     </div>  
                                 </div>
                             </div>

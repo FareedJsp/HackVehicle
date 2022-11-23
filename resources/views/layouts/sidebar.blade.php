@@ -16,14 +16,10 @@
       </div>
       <ul class="metismenu" id="menu">
         <li class="nav-label first">Main Menu</li>
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <li><a href="/dashboard" aria-expanded="false">
               <i class="flaticon-144-layout"></i>
               <span class="nav-text">Dashboard</span>
                 </a>
-            <ul aria-expanded="false">
-              <li><a href="index.html">Dashboard Light</a></li>
-              <li><a href="index-2.html">Dashboard Dark</a></li>
-            </ul>
             </li>
 
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">

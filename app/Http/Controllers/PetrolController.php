@@ -17,12 +17,24 @@ class PetrolController extends Controller
         return view('petrol.index', compact('petrol'));
     }
 
-    public function dashboardtotal()
+    public function indexDashboard()
     {
-        $petrol = Petrol::whereYear('fill_date_time', Carbon::now()->year)
-        ->whereMonth('fill_date_time', Carbon::now()->month)->sum('cost');
+        $petrol = Petrol::whereBetween('fill_date_time', [Carbon::now()->startOfMonth(), Carbon::now()->startOfWeek(Carbon::SUNDAY)])
+                    ->orderBy('fill_date_time', 'desc')
+                    ->limit(5)
+                    ->get();
 
-        return view('dashboard', compact('petrol'));
+        $petrol2 = Petrol::whereBetween('fill_date_time', [Carbon::now()->startOfWeek(Carbon::SUNDAY), Carbon::now()->endOfWeek(Carbon::SATURDAY)])
+                    ->orderBy('fill_date_time', 'desc')
+                    ->limit(5)
+                    ->get();
+
+        $petrol3 = Petrol::whereDay('fill_date_time',Carbon::now()->day)
+                    ->orderBy('fill_date_time', 'desc')
+                    ->limit(5)
+                    ->get();
+
+        return view('dashboard', compact('petrol', 'petrol2', 'petrol3'));
     }
 
     public function create()

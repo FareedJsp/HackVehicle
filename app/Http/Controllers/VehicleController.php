@@ -6,6 +6,8 @@ use App\Models\Vehicle;
 use App\Models\Maintenance;
 use App\Models\TotalPetrol;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class VehicleController extends Controller
 {
@@ -108,6 +110,14 @@ class VehicleController extends Controller
     public function destroy($id)
     {
         $data = Vehicle::find($id);
+
+        $image_path = app_path(public_path(). '/vehicle_images', $data->image);
+
+        if (File::exists($image_path)) {
+            //File::delete($image_path);
+            File::delete(public_path(). '/vehicle_images', $data->image);
+        }
+
         $data->delete();
 
         return redirect()->route ('vehicle')->with('success', 'vehicle has been deleted successfully.');
