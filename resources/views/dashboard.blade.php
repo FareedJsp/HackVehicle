@@ -1,10 +1,6 @@
 @extends('layouts.main')
 @section('content')
 
-@php
-    use Carbon\Carbon;
-@endphp
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-xl-6">
@@ -39,6 +35,13 @@
                         <div class="table-responsive">
                             <table class="table shadow-hover card-table border-no tbl-btn short-one">
                                 <tbody>
+                                    @if ($petrol3->first() == null)
+                                        <tr class="align-item-center">
+                                            <td class="align-item-center">
+                                                <span class="font-w600 text-black text">No Purchase Has Been Made On This Period</span>
+                                            </td>
+                                        </tr>
+                                    @endif
                                     @foreach ($petrol as $item)
                                     <tr>
                                         <td>
@@ -71,6 +74,13 @@
                         <div class="table-responsive">
                             <table class="table shadow-hover card-table border-no tbl-btn short-one">
                                 <tbody>
+                                    @if ($petrol3->first() == null)
+                                        <tr class="align-item-center">
+                                            <td class="align-item-center">
+                                                <span class="font-w600 text-black text">No Purchase Has Been Made During This Period</span>
+                                            </td>
+                                        </tr>
+                                    @endif
                                     @foreach ($petrol2 as $item)
                                     <tr>
                                         <td>
@@ -103,6 +113,13 @@
                         <div class="table-responsive">
                             <table class="table shadow-hover card-table border-no tbl-btn short-one">
                                 <tbody>
+                                    @if ($petrol3->first() == null)
+                                        <tr class="align-item-center">
+                                            <td class="align-item-center">
+                                                <span class="font-w600 text-black text">No Purchase Has Been Made Yet</span>
+                                            </td>
+                                        </tr>
+                                    @endif
                                     @foreach ($petrol3 as $item)
                                     <tr>
                                         <td>
