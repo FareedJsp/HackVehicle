@@ -200,7 +200,7 @@
                     </li>
                     @endforeach
               </div>
-                <a class="all-notification" href="javascript:void(0)">See all notifications <i class="ti-arrow-right"></i></a>            
+                {{-- <a class="all-notification" href="javascript:void(0)">See all notifications <i class="ti-arrow-right"></i></a>             --}}
             </div>
           </li>
           

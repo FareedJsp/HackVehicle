@@ -137,6 +137,112 @@
                 </div>
             </div>
         </div>
+        <div class="col-xl-6 col-xxl-12">
+            <div class="row mx-auto">
+                <div class="col-sm-6">
+                    <div class="widget-stat card bg-info">
+                        <div class="card-body  p-4">
+                            <div class="media">
+                                <span class="mr-3">
+                                    <i class="flaticon-381-user-1"></i>
+                                </span>
+                                <div class="media-body text-white text-right">
+                                    <p class="mb-1">Driver</p>
+                                    <h3 class="text-white">
+                                        {{App\Models\Driver::count()}}
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="widget-stat card bg-info">
+                        <div class="card-body  p-4">
+                            <div class="media">
+                                <span class="mr-3">
+                                    <i class="flaticon-381-compact-disc"></i>
+                                </span>
+                                <div class="media-body text-white text-right">
+                                    <p class="mb-1">Vehicle</p>
+                                    <h3 class="text-white">
+                                        {{App\Models\Vehicle::count()}}
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="widget-stat card bg-info">
+                        <div class="card-body  p-4">
+                            <div class="media">
+                                <span class="mr-3">
+                                    <i class="flaticon-008-credit-card"></i>
+                                </span>
+                                <div class="media-body text-white text-right">
+                                    <p class="mb-1">Gas Purchase (RM)</p>
+                                    <h3 class="text-white">
+                                        {{App\Models\Petrol::sum('cost')}}
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="widget-stat card bg-info">
+                        <div class="card-body  p-4">
+                            <div class="media">
+                                <span class="mr-3">
+                                    <i class="flaticon-013-broken-link"></i>
+                                </span>
+                                <div class="media-body text-white text-right">
+                                    <p class="mb-1">Wreckage Report</p>
+                                    <h3 class="text-white">
+                                        {{App\Models\Wreckage::count()}}
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="widget-stat card bg-info">
+                        <div class="card-body  p-4">
+                            <div class="media">
+                                <span class="mr-3">
+                                    <i class="flaticon-013-broken-link"></i>
+                                </span>
+                                <div class="media-body text-white text-right">
+                                    <p class="mb-1">Maintenance Report</p>
+                                    <h3 class="text-white">
+                                        {{App\Models\Maintenance::count()}}
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="widget-stat card bg-info">
+                        <div class="card-body  p-4">
+                            <div class="media">
+                                <span class="mr-3">
+                                    <i class="flaticon-381-battery-1"></i>
+                                </span>
+                                <div class="media-body text-white text-right">
+                                    <p class="mb-1">Maintenance Cost (RM)</p>
+                                    <h3 class="text-white">
+                                        {{App\Models\Maintenance::sum('maintenance_cost')}}
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
