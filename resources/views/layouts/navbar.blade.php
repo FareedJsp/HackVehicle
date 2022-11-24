@@ -3,16 +3,16 @@
 ***********************************-->
 
 @php
-    use Carbon\Carbon;
+use Carbon\Carbon;
 
-    function dateDifference($start_date, $end_date)
+function dateDifference($start_date, $end_date)
 {
-    // calulating the difference in timestamps 
-    $diff = strtotime($start_date) - strtotime($end_date);
-      
-    // 1 day = 24 hours 
-    // 24 * 60 * 60 = 86400 seconds
-    return ceil(abs($diff / 86400));
+// calulating the difference in timestamps 
+$diff = strtotime($start_date) - strtotime($end_date);
+  
+// 1 day = 24 hours 
+// 24 * 60 * 60 = 86400 seconds
+return ceil(abs($diff / 86400));
 }
 
     $user = DB::table('users')->get()->first();

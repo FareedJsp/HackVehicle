@@ -24,30 +24,27 @@
     <div class="card-body">
       <div class="table-responsive">
         <table class="table style-1" id="ListDatatableView">
-        <thead>
-        <tr>
-          <th>No</th>
-          <th>Vehicle</th>
-          <th>Total Gas This Month</th>
-          <th>Total Gas Overall</th>
-          <th>Receipt Received This Month</th>
-          <th>Detail Gas By Month</th>
-        </tr>
-        </thead>
-        <tbody>
-
-          @php
-            $no = 1
-          @endphp
-
+          <thead>
+          <tr>
+            <th>No</th>
+            <th>Vehicle</th>
+            <th>Total Gas This Month</th>
+            <th>Total Gas Overall</th>
+            <th>Receipt Received This Month</th>
+            <th>Detail Gas By Month</th>
+          </tr>
+          </thead>
+          <tbody>
+            @php
+              $no = 1
+            @endphp
             @foreach (App\Models\Vehicle::get() as $row)
-
             <tr>
               <td> {{ $no++ }} </td>
               <td> {{ $row->model ." ". $row->no_plate}} </td>
                 <td>
                   @php
-                    $data = DB::table('petrols')->where('vehicle_id', $row->id)->whereYear('fill_date_time', Carbon::now()->year)
+                    $data = App\Models\Petrol::where('vehicle_id', $row->id)->whereYear('fill_date_time', Carbon::now()->year)
                             ->whereMonth('fill_date_time',Carbon::now()->month)
                             ->sum('cost');
                   @endphp
@@ -58,14 +55,7 @@
                   @endif
                 </td>
               <td>
-                @php
-
-                    $a = DB::table('total_petrols')->where('vehicle_id', $row->id)
-                                ->sum('sumcost');
-                @endphp
-
-                {{$a}}
-                
+                {{App\Models\TotalPetrol::where('vehicle_id', $row->id)->sum('sumcost')}}
               </td>
               <td>  
                 <a href="/showpetrol/{{$row->id}}" class="btn btn-outline-primary">Show</i></a>
@@ -73,10 +63,8 @@
               <td>
                 <a href="/showbymonth/{{$row->id}}" class="btn btn-outline-primary">Show</i></a>
               </td>
-            </tr>
-                
+            </tr>      
             @endforeach
-
           </tbody>
         </table>
       </div>

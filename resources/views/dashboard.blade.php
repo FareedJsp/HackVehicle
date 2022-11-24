@@ -1,6 +1,10 @@
 @extends('layouts.main')
 @section('content')
 
+@php
+    use Carbon\Carbon;
+@endphp
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-xl-6">
@@ -256,6 +260,48 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-xxl-6 col-lg-6">
+            <div class="card">
+                <div class="card-header border-0 pb-0">
+                    <h4 class="card-title">Notification</h4>
+                </div>
+                <div class="card-body">
+                    <div id="DZ_W_TimeLine" class="widget-timeline dz-scroll height370">
+                        <ul class="timeline">
+                            @foreach (App\Models\Vehicle::orderBy('roadtax_exp', 'asc')->get() as $item)
+                                @php
+
+                                $x = $item->roadtax_exp;
+                                $y = date("Y-m-d");
+
+                                $x = Carbon::parse("$x");
+
+                                $dateDiff = $x->diffInDays($y);
+        
+                                @endphp
+                            <li>
+                                @if ($dateDiff <= 30)
+                                <div class="timeline-badge danger"></div>
+                                <a class="timeline-panel text-muted" href="/detail/{{$item->id}}">
+                                    <span>{{$item->model."-".$item->no_plate}}</span>
+                                    <h6 class="mb-0">Renew Road Tax in <strong class="text-primary">{{$dateDiff." days"}}</strong>.</h6>
+                                </a>
+                                @else
+                                <div class="timeline-badge success"></div>
+                                <a class="timeline-panel text-muted" href="/detail/{{$item->id}}">
+                                    <span>{{$item->model."-".$item->no_plate}}</span>
+                                    <h6 class="mb-0">Renew Road Tax in <strong class="text-primary">{{$dateDiff." days"}}</strong>.</h6>
+                                </a>
+                                @endif
+                            </li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
