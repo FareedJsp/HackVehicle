@@ -143,12 +143,12 @@ class MaintenanceController extends Controller
         return response()->json($result);
     }
 
-    public function updatedataMaintenance(Request $request, $id){
+    public function updatedataMaintenance(Request $request){
         $result = [];
         $result['status'] = false ;
         $result['message'] = "something error";
 
-        $data = Maintenance::findOrFail($id);
+        $data = Maintenance::findOrFail($request->id);
 
         $images = null;
         if($request->hasFile('maintenance_image')){

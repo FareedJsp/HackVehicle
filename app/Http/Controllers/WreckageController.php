@@ -143,12 +143,12 @@ class WreckageController extends Controller
         return response()->json($result);
     }
 
-    public function updatedataWreckage(Request $request, $id){
+    public function updatedataWreckage(Request $request){
         $result = [];
         $result['status'] = false ;
         $result['message'] = "something error";
 
-        $data = Wreckage::findOrFail($id);
+        $data = Wreckage::findOrFail($request->id);
 
         $data -> vehicle_id = $request->vehicle_id;
         $data -> driver_id = $request->driver_id;
