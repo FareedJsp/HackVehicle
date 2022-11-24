@@ -40,9 +40,9 @@
                             <table class="table shadow-hover card-table border-no tbl-btn short-one">
                                 <tbody>
                                     @if ($petrol->first() == null)
-                                        <tr class="align-item-center">
-                                            <td class="align-item-center">
-                                                <span class="font-w600 text-black text">No Purchase Has Been Made On This Period</span>
+                                        <tr>
+                                            <td>
+                                                <span class="font-w600 text-black">No Purchase Has Been Made On This Period</span>
                                             </td>
                                         </tr>
                                     @endif
@@ -79,9 +79,9 @@
                             <table class="table shadow-hover card-table border-no tbl-btn short-one">
                                 <tbody>
                                     @if ($petrol2->first() == null)
-                                        <tr class="align-item-center">
-                                            <td class="align-item-center">
-                                                <span class="font-w600 text-black text">No Purchase Has Been Made During This Period</span>
+                                        <tr>
+                                            <td>
+                                                <span class="font-w600 text-black">No Purchase Has Been Made During This Period</span>
                                             </td>
                                         </tr>
                                     @endif
@@ -118,9 +118,9 @@
                             <table class="table shadow-hover card-table border-no tbl-btn short-one">
                                 <tbody>
                                     @if ($petrol3->first() == null)
-                                        <tr class="align-item-center">
-                                            <td class="align-item-center">
-                                                <span class="font-w600 text-black text">No Purchase Has Been Made Yet</span>
+                                        <tr>
+                                            <td>
+                                                <span class="font-w600 text-black">No Purchase Has Been Made Yet</span>
                                             </td>
                                         </tr>
                                     @endif

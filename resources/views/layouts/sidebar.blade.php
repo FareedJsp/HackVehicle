@@ -63,8 +63,8 @@
             <span class="nav-text">Gas Data</span>
           </a>
                       <ul aria-expanded="false">
-                        <li><a href="/gas">By Vehicle (Overall)</a></li>
-                        <li><a href="/petrol">All Data (Receipt)</a></li>
+                        <li><a href="/gas">By Vehicle - <strong>Overall</strong></a></li>
+                        <li><a href="/petrol">All Data - <strong>Receipt</strong></a></li>
                       </ul>
                   </li>
         
