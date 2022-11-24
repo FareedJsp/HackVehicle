@@ -35,7 +35,7 @@
                         <div class="table-responsive">
                             <table class="table shadow-hover card-table border-no tbl-btn short-one">
                                 <tbody>
-                                    @if ($petrol3->first() == null)
+                                    @if ($petrol->first() == null)
                                         <tr class="align-item-center">
                                             <td class="align-item-center">
                                                 <span class="font-w600 text-black text">No Purchase Has Been Made On This Period</span>
@@ -74,7 +74,7 @@
                         <div class="table-responsive">
                             <table class="table shadow-hover card-table border-no tbl-btn short-one">
                                 <tbody>
-                                    @if ($petrol3->first() == null)
+                                    @if ($petrol2->first() == null)
                                         <tr class="align-item-center">
                                             <td class="align-item-center">
                                                 <span class="font-w600 text-black text">No Purchase Has Been Made During This Period</span>

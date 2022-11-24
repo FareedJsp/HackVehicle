@@ -122,3 +122,8 @@ Route::get('/test2', function () {
 Route::get('/test3', function () {
     return view('test3');
 });
+
+Route::get('/token', function () {
+    echo csrf_token(); 
+
+  });

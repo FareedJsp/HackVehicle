@@ -111,7 +111,7 @@ class WreckageController extends Controller
         $result['status'] = false ;
         $result['message'] = "something error";
 
-        $data = Wreckage::findOrFail($id);
+        $data = new Wreckage;
 
         $data -> vehicle_id = $request->vehicle_id;
         $data -> driver_id = $request->driver_id;
