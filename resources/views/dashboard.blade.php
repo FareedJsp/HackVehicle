@@ -306,6 +306,105 @@
                 </div>
             </div>
         </div>
+        <div class="col-xl-8 col-xxl-8 col-lg-12 col-sm-12">
+            <div class="card">
+                <div class="card-header border-0 pb-0 d-sm-flex d-block">
+                    <h4 class="card-title">Status of Vehicle and Driver</h4>
+                    <div class="card-action mb-sm-0 my-2">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#available" role="tab">Available</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#notavailable" role="tab">Not Available</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body tab-content">
+                    <div class="tab-pane fade show active" id="available" role="tabpanel">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="card-title">Vehicle</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="basic-list-group">
+                                            <div class="list-group">
+                                                @foreach (App\Models\Vehicle::where('status', 'Available') as $item)
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    {{$item->model."-".$item->no_plate}}<span class="badge badge-circle badge-outline-success"><i class="fa-solid fa-check"></i></span>
+                                                </li>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="card-title">Driver</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="basic-list-group">
+                                            <div class="list-group">
+                                                @foreach (App\Models\Driver::where('status', 'Available') as $item)
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    {{$item->name}}<span class="badge badge-circle badge-outline-success"><i class="fa-solid fa-check"></i></span>
+                                                </li>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="notavailable" role="tabpanel">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="card-title">Vehicle</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="basic-list-group">
+                                            <div class="list-group">
+                                                @foreach (App\Models\Vehicle::where('status', 'Not Available') as $item)
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    {{$item->model."-".$item->no_plate}}<span class="badge badge-circle badge-outline-danger"><i class="fa-solid fa-xmark"></i></span>
+                                                </li>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="card-title">Driver</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="basic-list-group">
+                                            <div class="list-group">
+                                                @foreach (App\Models\Driver::where('status', 'Not Available') as $item)
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    {{$item->name}}<span class="badge badge-circle badge-outline-danger"><i class="fa-solid fa-xmark"></i></span>
+                                                </li>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
