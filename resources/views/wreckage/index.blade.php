@@ -19,7 +19,7 @@
               <h4 class="card-title mb-2">Wreckage List</h4>
               <span>Recent Data</span>
             </div>
-            <a href="/addmaintenance" class="btn btn-info">+ Add Data Manually</a>
+            <a href="/addwreckage" class="btn btn-info">+ Add Data Manually</a>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -30,6 +30,7 @@
                   <th>Vehicle</th>
                   <th>Driver</th>
                   <th>Location</th>
+                  <th>Time</th>
                   <th>Image</th>
                   <th>Title</th>
                   <th>Description</th>
@@ -47,6 +48,7 @@
                   <td> {{ $row->Vehicle->model ." ". $row->Vehicle->no_plate}} </td>
                   <td> {{ $row->Driver->name ?? null}} </td>
                   <td> {{ $row->location ?? null}} </td>
+                  <td> {{ $row->date_time ?? null}} </td>
                   <td> <img src="/wreckage_images/{{ $row->wreckage_image ?? null}} " alt="" width="120"> </td>
                   <td> {{ $row->wreckage_title}} </td>
                   <td> {{ $row->description}} </td>

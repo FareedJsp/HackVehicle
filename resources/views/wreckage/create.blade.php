@@ -38,6 +38,11 @@
         </div>
 
         <div class="mb-3">
+          <label class="form-label">Date and Time</label>
+          <input type="datetime-local" class="form-control" name="date_time">
+        </div>
+
+        <div class="mb-3">
           <label class="form-label">Image</label>
           <input type="file" class="form-control-file" name="wreckage_image">
         </div>
