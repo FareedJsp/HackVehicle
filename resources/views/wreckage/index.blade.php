@@ -26,7 +26,7 @@
                   <th>Vehicle</th>
                   <th>Driver</th>
                   <th>Location</th>
-                  <th>Time</th>
+                  <th>Date</th>
                   <th>Image</th>
                   <th>Title</th>
                   <th>Description</th>
@@ -44,7 +44,7 @@
                   <td> {{ $row->Vehicle->model ." ". $row->Vehicle->no_plate}} </td>
                   <td> {{ $row->Driver->name ?? null}} </td>
                   <td> {{ $row->location ?? null}} </td>
-                  <td> {{ $row->date_time ?? null}} </td>
+                  <td> {{ $row->date ?? null}} </td>
                   <td> <img src="/wreckage_images/{{ $row->wreckage_image ?? null}} " alt="" width="120"> </td>
                   <td> {{ $row->wreckage_title}} </td>
                   <td> {{ $row->description}} </td>

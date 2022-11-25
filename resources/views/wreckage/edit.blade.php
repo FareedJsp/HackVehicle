@@ -39,7 +39,7 @@
 
         <div class="mb-3">
           <label class="form-label">Date and Time</label>
-          <input type="datetime-local" class="form-control" name="date_time" value="{{$wreckage->date_time}}">
+          <input type="date" class="form-control" name="date" value="{{$wreckage->date}}">
         </div>
 
         <div class="mb-3">
