@@ -1,8 +1,6 @@
 @extends('layouts.main')
 
 @section('title' , 'gas')
-@section('heading' , 'Gas Data')
-@section('breadcrumb' , 'gas data')
 
 @section('content')
 

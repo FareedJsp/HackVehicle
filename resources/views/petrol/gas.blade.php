@@ -45,7 +45,7 @@
               <td> {{ $row->model ." ". $row->no_plate}} </td>
                 <td>
                   @php
-                    $data = App\Models\Petrol::where('vehicle_id', $row->id)->whereYear('fill_date_time', Carbon::now()->year)
+                    $data = App\Models\Petrol::where('vehicle_id', $row->id)
                             ->whereMonth('fill_date_time',Carbon::now()->month)
                             ->sum('cost');
                   @endphp

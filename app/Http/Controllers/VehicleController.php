@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vehicle;
+use App\Models\Wreckage;
 use App\Models\Maintenance;
 use App\Models\TotalPetrol;
 use Illuminate\Http\Request;
@@ -120,21 +121,24 @@ class VehicleController extends Controller
         return redirect()->route ('vehicle')->with('success', 'vehicle has been deleted successfully.');
     }
 
-    public function show($id)
+    public function showM($id)
     {
-
-        $maintenance = Maintenance::where("vehicle_id",$id)->get();
-
-        // return $maintenance;
+        $maintenance = Maintenance::where("vehicle_id",$id)->orderBy('date', 'asc')->get();
         
         return view('vehicle.showmaintenance', compact('maintenance'));
+    }
+
+    public function showW($id)
+    {
+        $wreckage = Wreckage::where("vehicle_id",$id)->orderBy('date', 'asc')->get();
+        
+        return view('vehicle.showwreckage', compact('wreckage'));
     }
 
     public function front($id)
     {
 
-        $vehicle = Vehicle::where('id', $id)->get();
-        
+        $vehicle = Vehicle::findOrFail($id)->get();   
         return view('vehicle.detail', compact('vehicle'));
     }
 

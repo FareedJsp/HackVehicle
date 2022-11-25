@@ -128,7 +128,7 @@
                                     </div>
                                     <div>
                                         <button type="button" class="btn btn-primary">
-                                            <a class="text-white" href="/showmaintenance/{{$item->id}}">Wreckage Record</a>
+                                            <a class="text-white" href="/showwreckage/{{$item->id}}">Wreckage Record</a>
                                             <span class="btn-icon-right"><i class="fa-regular fa-file"></i></span>
                                         </button>
                                     </div>  

@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title' , 'Maintenance List')
+@section('title' , 'Maintenance Report Detail')
 @section('content')
 
 @if ($message = Session::get('success'))

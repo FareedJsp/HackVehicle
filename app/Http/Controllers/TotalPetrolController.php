@@ -18,14 +18,11 @@ class TotalPetrolController extends Controller
 
     public function thismonthindex()
     {
-        $totalp = TotalPetrol::whereYear('date', Carbon::now()->year)
-            ->whereMonth('date', Carbon::now()->month)
-            ->get();
-
+        $totalp = TotalPetrol::whereMonth('date', Carbon::now()->month)->get();
         return view('petrol.showthismonth', compact('totalp'));
     }
 
-    public function show($id)
+    public function showP($id)
     {
         $totalp = Vehicle::findOrFail($id);
 
@@ -36,5 +33,11 @@ class TotalPetrolController extends Controller
                     ->get();
 
         return view('petrol.showpetrol', compact('petrol'));
+    }
+
+    public function show($id)
+    {
+        $total = TotalPetrol::findOrFail($id)->orderBy('date', 'desc')->get();
+        return view('total.showbymonth', compact('total'));
     }
 }

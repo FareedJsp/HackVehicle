@@ -34,7 +34,8 @@ Route::get('/editvehicle/{id}',[VehicleController::class,'edit']);
 Route::post('/updatevehicle/{id}',[VehicleController::class,'update']);
 Route::get('/deletevehicle/{id}',[VehicleController::class,'destroy']);
 
-Route::get('/showmaintenance/{id}',[VehicleController::class,'show']);
+Route::get('/showmaintenance/{id}',[VehicleController::class,'showM']);
+Route::get('/showwreckage/{id}',[VehicleController::class,'showW']);
 
 Route::get('/detail/{id}',[VehicleController::class,'front']);
 
@@ -74,14 +75,19 @@ Route::get('/editpetrol/{id}',[PetrolController::class,'edit']);
 Route::post('/updatepetrol/{id}',[PetrolController::class,'update']);
 Route::get('/deletepetrol/{id}',[PetrolController::class,'destroy']);
 
+// --Petrol extra
+
+Route::get('/dashboard',[PetrolController::class,'indexDashboard']);
 Route::get('/gas', function () {
     return view('petrol.gas');
 });
 
+//TotalPetrol
+
 Route::get('/totalpetrol',[TotalPetrolController::class,'index']);
 Route::get('/showgas',[TotalPetrolController::class,'thismonthindex']);
-Route::get('/showpetrol/{id}',[TotalPetrolController::class,'show']);
-Route::get('/dashboard',[PetrolController::class,'indexDashboard']);
+Route::get('/showpetrol/{id}',[TotalPetrolController::class,'showP']);
+Route::get('/showbymonth/{id}',[TotalPetrolController::class,'show']);
 
 //Wreckage
 
