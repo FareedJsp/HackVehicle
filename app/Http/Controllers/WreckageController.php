@@ -25,6 +25,7 @@ class WreckageController extends Controller
         $data -> vehicle_id = $request->vehicle_id;
         $data -> driver_id = $request->driver_id;
         $data -> location = $request->location ?? null;
+        $data -> date_time = $request->date_time;
         $data -> wreckage_title = $request->wreckage_title;
         $data -> description = $request->description;
         $data -> action_needed = $request->action_needed;
@@ -62,6 +63,7 @@ class WreckageController extends Controller
         $data -> vehicle_id = $request->vehicle_id;
         $data -> driver_id = $request->driver_id;
         $data -> location = $request->location;
+        $data -> date_time = $request->date_time;
         $data -> wreckage_title = $request->wreckage_title;
         $data -> description = $request->description;
         $data -> action_needed = $request->action_needed;
