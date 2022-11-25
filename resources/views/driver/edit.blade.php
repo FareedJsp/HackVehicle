@@ -1,9 +1,5 @@
 @extends('layouts.main')
-
-@section('title' , 'editdriver')
-@section('heading' , 'Edit Driver Data')
-@section('breadcrumb' , 'Edit Driver Data')
-
+@section('title' , 'Edit Driver')
 @section('content')
 
 <form method="post" action="/updatedriver/{{$driver->id}}" enctype="multipart/form-data">
@@ -15,8 +11,7 @@
   <div class="row page-titles mx-0">
     <div class="col-sm-6 p-md-0">
         <div class="welcome-text">
-            <h4>Hi, welcome back!</h4>
-            <p class="mb-0">Add Driver Data</p>
+            <h4>Edit Driver Data</h4>
         </div>
     </div>
     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">

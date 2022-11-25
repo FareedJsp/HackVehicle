@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@section('title' , 'Driver List')
 @section('content')
 
 @if ($message = Session::get('success'))

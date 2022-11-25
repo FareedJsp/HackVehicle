@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@section('title' , 'Edit Gas')
 @section('content')
 
 <form method="post" action="/updatepetrol/{{$petrol->id}}" enctype="multipart/form-data">

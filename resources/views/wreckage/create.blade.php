@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@section('title' , 'Add Wreckage Report')
 @section('content')
 
 <form method="post" action="/insertwreckage" enctype="multipart/form-data">

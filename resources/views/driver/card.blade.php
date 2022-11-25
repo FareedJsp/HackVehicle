@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@section('title' , 'Driver Card')
 @section('content')
 
 <div class="container-fluid">

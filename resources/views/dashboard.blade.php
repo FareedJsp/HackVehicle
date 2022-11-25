@@ -326,8 +326,8 @@
                         <div class="row">
                             <div class="col">
                                 <div class="card">
-                                    <div class="card-header">
-                                        <h5 class="card-title">Vehicle</h5>
+                                    <div class="card-header bg-success">
+                                        <h5 class="card-title text-white">Vehicle</h5>
                                     </div>
                                     <div class="card-body">
                                         <div class="basic-list-group">
@@ -344,8 +344,8 @@
                             </div>
                             <div class="col">
                                 <div class="card">
-                                    <div class="card-header">
-                                        <h5 class="card-title">Driver</h5>
+                                    <div class="card-header bg-success">
+                                        <h5 class="card-title text-white">Driver</h5>
                                     </div>
                                     <div class="card-body">
                                         <div class="basic-list-group">
@@ -366,8 +366,8 @@
                         <div class="row">
                             <div class="col">
                                 <div class="card">
-                                    <div class="card-header">
-                                        <h5 class="card-title">Vehicle</h5>
+                                    <div class="card-header bg-danger">
+                                        <h5 class="card-title text-white">Vehicle</h5>
                                     </div>
                                     <div class="card-body">
                                         <div class="basic-list-group">
@@ -384,8 +384,8 @@
                             </div>
                             <div class="col">
                                 <div class="card">
-                                    <div class="card-header">
-                                        <h5 class="card-title">Driver</h5>
+                                    <div class="card-header bg-danger">
+                                        <h5 class="card-title text-white">Driver</h5>
                                     </div>
                                     <div class="card-body">
                                         <div class="basic-list-group">

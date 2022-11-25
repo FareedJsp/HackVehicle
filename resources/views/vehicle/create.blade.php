@@ -1,9 +1,5 @@
 @extends('layouts.main')
-
-@section('title' , 'addvehicle')
-@section('heading' , 'Add Vehicle')
-@section('breadcrumb' , 'Add Vehicle')
-
+@section('title' , 'Add Vehicle')
 @section('content')
 
 <form method="post" action="/insertvehicle" enctype="multipart/form-data">

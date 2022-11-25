@@ -1,9 +1,5 @@
 @extends('layouts.main')
-
-@section('title' , 'gas')
-@section('heading' , 'Gas Data')
-@section('breadcrumb' , 'gas data')
-
+@section('title' , 'Petrol Detail')
 @section('content')
 
 @if ($message = Session::get('success'))

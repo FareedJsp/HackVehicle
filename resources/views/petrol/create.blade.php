@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@section('title' , 'Add Manually')
 @section('content')
 
 <form method="post" action="/insertpetrol" enctype="multipart/form-data">

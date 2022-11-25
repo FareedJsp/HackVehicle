@@ -1,9 +1,5 @@
 @extends('layouts.main')
-
-@section('title' , 'editvehicle')
-@section('heading' , 'Edit Vehicle Data')
-@section('breadcrumb' , 'Edit Vehicle Data')
-
+@section('title' , 'Edit Vehicle')
 @section('content')
 
 <form method="post" action="/updatevehicle/{{$vehicle->id}}" enctype="multipart/form-data">

@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@section('title' , 'Add Report Maintenance')
 @section('content')
 
 <form method="post" action="/insertmaintenance" enctype="multipart/form-data">

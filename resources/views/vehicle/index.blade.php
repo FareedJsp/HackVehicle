@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@section('title' , 'Vehicle List')
 @section('content')
 
 @if ($message = Session::get('success'))
