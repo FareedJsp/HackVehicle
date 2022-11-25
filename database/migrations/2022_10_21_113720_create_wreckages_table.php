@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('vehicle_id');
             $table->integer('driver_id');
             $table->text('location');
+            $table->dateTime('date_time');
             $table->string('wreckage_image');
             $table->string('wreckage_title');
             $table->text('description');
