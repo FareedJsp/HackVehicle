@@ -4,15 +4,12 @@
 <div class="deznav">
   <div class="deznav-scroll">
       <div class="main-profile">
-        @php
-            $user = DB::table('users')->get()->first();
-        @endphp
         <div class="image-bx">
           <img src="/images/user.png" alt="">
           <a href="javascript:void(0);"><i class="fa fa-cog" aria-hidden="true"></i></a>
         </div>
-        <h5 class="name"><span class="font-w400">Hello,</span> {{$user->name}}</h5>
-        <p class="email">{{$user->email}}</p>
+        <h5 class="name"><span class="font-w400">Hello,</span> {{Auth::User()->name}}</h5>
+        <p class="email">{{Auth::User()->email}}</p>
       </div>
       <ul class="metismenu" id="menu">
         <li class="nav-label first">Main Menu</li>

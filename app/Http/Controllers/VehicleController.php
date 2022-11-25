@@ -96,11 +96,8 @@ class VehicleController extends Controller
             $file->move(public_path(). '/vehicle_images', $name);
             $image = $name;
 
-        }else{
-            $image = $request->image;
+            $data -> image = $image;
         }
-
-        $data -> image = $image;
 
         $data->save();
 

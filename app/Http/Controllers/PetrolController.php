@@ -13,7 +13,7 @@ class PetrolController extends Controller
 {
     public function index()
     {
-        $petrol = Petrol::orderBy('fill_date_time', 'asc')->get();
+        $petrol = Petrol::orderBy('fill_date_time', 'desc')->get();
         return view('petrol.index', compact('petrol'));
     }
 
