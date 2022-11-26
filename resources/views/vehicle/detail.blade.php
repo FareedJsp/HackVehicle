@@ -22,11 +22,10 @@
         </div>
     </div>
 
-        @foreach ($vehicle as $item)
-
       <div class="row">
             <div class="col-lg-12">
 
+                @foreach ($vehicle as $item)
                 <div class="card project-card mt-3">
                     <div class="card-header">
                         <span class="float-left">
@@ -137,10 +136,9 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
-
-            @endforeach
 </div>
 
 @endsection
