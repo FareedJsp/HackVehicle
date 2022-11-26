@@ -137,8 +137,7 @@ class VehicleController extends Controller
 
     public function front($id)
     {
-
-        $vehicle = Vehicle::findOrFail($id)->get();   
+        $vehicle = Vehicle::where('id', $id)->get();
         return view('vehicle.detail', compact('vehicle'));
     }
 
