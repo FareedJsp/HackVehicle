@@ -56,7 +56,7 @@
                   @endif
                 </td>
               <td>
-                {{App\Models\TotalPetrol::where('vehicle_id', $row->id)->sum('sumcost')}}
+                {{round(App\Models\TotalPetrol::where('vehicle_id', $row->id)->sum('sumcost'), 2)}}
               </td>
               <td>  
                 <a href="/showpetrol/{{$row->id}}" class="btn btn-outline-primary">Show</i></a>
