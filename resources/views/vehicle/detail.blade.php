@@ -7,7 +7,6 @@
 @endphp
 
 <div class="container-fluid">
-
     <div class="row page-titles mx-0">
         <div class="col-sm-6 p-md-0">
             <div class="welcome-text">
@@ -21,10 +20,8 @@
             </ol>
         </div>
     </div>
-
       <div class="row">
             <div class="col-lg-12">
-
                 @foreach ($vehicle as $item)
                 <div class="card project-card mt-3">
                     <div class="card-header">
@@ -137,8 +134,7 @@
                     </div>
                 </div>
                 @endforeach
-            </div>
         </div>
+    </div>
 </div>
-
 @endsection
