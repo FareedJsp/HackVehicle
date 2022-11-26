@@ -37,7 +37,7 @@ class TotalPetrolController extends Controller
 
     public function show($id)
     {
-        $total = TotalPetrol::findOrFail($id)->orderBy('date', 'desc')->get();
+        $total = TotalPetrol::where('id', $id)->orderBy('date', 'desc')->get();
         return view('total.showbymonth', compact('total'));
     }
 }
