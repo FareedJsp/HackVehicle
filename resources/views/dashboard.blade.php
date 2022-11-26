@@ -205,7 +205,11 @@
                                 <div class="media-body text-white text-right">
                                     <p class="mb-1">Gas Purchase (RM)</p>
                                     <h3 class="text-white">
-                                        {{App\Models\Petrol::sum('cost')}}
+                                        @php
+                                            $x=App\Models\Petrol::sum('cost');
+                                            $b=round($x, 2)
+                                        @endphp
+                                        {{$b}}
                                     </h3>
                                 </div>
                             </div>
