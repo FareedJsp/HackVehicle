@@ -8,7 +8,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xl-6">
+        <div class="col">
             <div class="card">
                 <div class="card-header pb-2 d-block d-sm-flex flex-wrap border-0">
                     <div class="mb-3">
