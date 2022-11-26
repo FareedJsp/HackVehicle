@@ -52,7 +52,7 @@
                   @if ($data == null)
                     {{"No Data Yet"}}
                   @else
-                    {{$data}}
+                    {{round($data, 2)}}
                   @endif
                 </td>
               <td>
