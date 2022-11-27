@@ -34,8 +34,6 @@ class PetrolController extends Controller
                     ->limit(5)
                     ->get();
 
-        return $petrol3;
-
         return view('dashboard', compact('petrol', 'petrol2', 'petrol3'));
     }
 
