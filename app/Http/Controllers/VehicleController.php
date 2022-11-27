@@ -123,14 +123,14 @@ class VehicleController extends Controller
 
     public function showM($id)
     {
-        $maintenance = Maintenance::where("vehicle_id",$id)->orderBy('date', 'asc')->get();
+        $maintenance = Maintenance::where('vehicle_id',$id)->orderBy('date', 'desc')->get();
         
         return view('vehicle.showmaintenance', compact('maintenance'));
     }
 
     public function showW($id)
     {
-        $wreckage = Wreckage::where("vehicle_id",$id)->orderBy('date', 'asc')->get();
+        $wreckage = Wreckage::where('vehicle_id',$id)->orderBy('date', 'desc')->get();
         
         return view('vehicle.showwreckage', compact('wreckage'));
     }
