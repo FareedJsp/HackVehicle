@@ -37,10 +37,8 @@ class TotalPetrolController extends Controller
 
     public function show($id)
     {
-        $vid = TotalPetrol::where('id', $id)->pluck('vehicle_id');
-        
-        $total = TotalPetrol::where('vehicle_id', $vid)->orderBy('date', 'desc')->get();
-        
+        $total = TotalPetrol::where('vehicle_id', $id)->orderBy('date', 'desc')->get();
+        // return $total;
         return view('total.showbymonth', compact('total'));
     }
 }
