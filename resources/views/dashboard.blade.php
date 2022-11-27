@@ -47,7 +47,7 @@
                                             </td>
                                         </tr>
                                     @endif
-                                    @foreach ($petrol as $item0)
+                                    @foreach ($petrol as $item)
                                     <tr>
                                         <td>
                                             <span>
@@ -58,16 +58,16 @@
                                             </span>
                                         </td>
                                         <td class="wspace-no">
-                                            {{ $item0->Vehicle->model ." ". $item0->Vehicle->no_plate}}
+                                            {{ $item->Vehicle->model ." ". $item->Vehicle->no_plate}}
                                         </td>
                                         <td>
-                                            <span class="text-black">{{$item0->fill_date_time}}</span>
+                                            <span class="text-black">{{$item->fill_date_time}}</span>
                                         </td>
                                         <td>
-                                            <span class="font-w600 text-black">{{"RM ".$item0->cost}}</span>
+                                            <span class="font-w600 text-black">{{"RM ".$item->cost}}</span>
                                         </td>
                                         <td>
-                                            <span class="text-black">{{$item0->Driver->name}}</span>
+                                            <span class="text-black">{{$item->Driver->name}}</span>
                                         </td>
                                     </tr>
                                     @endforeach

@@ -29,10 +29,12 @@ class PetrolController extends Controller
                     ->limit(5)
                     ->get();
 
-        $petrol3 = Petrol::whereDay('fill_date_time',Carbon::now()->day)
+        $petrol3 = Petrol::whereDate('fill_date_time', Carbon::today())
                     ->orderBy('fill_date_time', 'desc')
                     ->limit(5)
                     ->get();
+
+        return $petrol3;
 
         return view('dashboard', compact('petrol', 'petrol2', 'petrol3'));
     }
