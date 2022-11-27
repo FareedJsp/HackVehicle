@@ -89,6 +89,13 @@ class WreckageController extends Controller
     public function destroy($id)
     {
         $data = Wreckage::find($id);
+
+        if(File::exists(public_path().'/wreckage_images/'.$data->wreckage_image)){
+            File::delete(public_path().'/wreckage_images/'.$data->wreckage_image);
+        }else{
+            dd('File does not exists.');
+        }
+
         $data->delete();
 
         return redirect()->route ('wreckage')->with('success', 'wreckage report has been deleted successfully.');

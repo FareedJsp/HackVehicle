@@ -7,6 +7,7 @@ use App\Models\Petrol;
 use App\Models\Vehicle;
 use App\Models\TotalPetrol;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Database\Eloquent\Collection;
 
 class PetrolController extends Controller
@@ -163,9 +164,52 @@ class PetrolController extends Controller
         return redirect()->route ('petrol')->with('success', 'petrol has been updated successfully.');
     }
 
+    // public function destroy($id)
+    // {
+    //     $data = Petrol::find($id);
+
+    //     $b = $data->vehicle_id;
+
+    //     $data->delete();
+
+    //     //gastotal
+
+    //     $b = $data->fill_date_time;
+
+    //     $c = date('Y-m-d H:i:s', strtotime($b));
+
+    //     $d = Carbon::createFromFormat('Y-m-d H:i:s', $c);
+
+    //     $x = $d->format('Y');
+
+    //     $y = $d->format('m');
+
+    //     $costa = $data->where('vehicle_id', $data->vehicle_id)->whereYear('fill_date_time', $x)
+    //         ->whereMonth('fill_date_time', $y)
+    //         ->sum('cost');
+        
+    //     $z = $d->format('Y-m');
+
+    //     $dota = Carbon::parse($z);
+
+    //     $gas = TotalPetrol::where('vehicle_id', $data->vehicle_id)->where('date', $dota)->update(
+    //         ['sumcost' => $costa]
+    //     );
+
+    //     //endgastotal
+
+    //     return redirect()->route ('petrol')->with('success', 'petrol has been deleted successfully.');
+    // }
+
     public function destroy($id)
     {
         $data = Petrol::find($id);
+
+        if(File::exists(public_path().'/petrol_images/'.$data->receipt_image)){
+            File::delete(public_path().'/petrol_images/'.$data->receipt_image);
+        }else{
+            dd('File does not exists.');
+        }
 
         $b = $data->vehicle_id;
 

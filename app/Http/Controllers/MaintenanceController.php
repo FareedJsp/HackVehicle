@@ -86,6 +86,13 @@ class MaintenanceController extends Controller
     public function destroy($id)
     {
         $data = Maintenance::find($id);
+
+        if(File::exists(public_path().'/maintenance_images/'.$data->maintenance_image)){
+            File::delete(public_path().'/maintenance_images/'.$data->maintenance_image);
+        }else{
+            dd('File does not exists.');
+        }
+
         $data->delete();
 
         return redirect()->route ('maintenance')->with('success', 'maintenance has been deleted successfully.');
