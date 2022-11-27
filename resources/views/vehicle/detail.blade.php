@@ -106,11 +106,11 @@
                             <div class="d-flex align-items-center mb-4">
                                 <div class="text-center border-bx mr-3">
                                     <span>Total Gas Cost This Month</span>
-                                    <p class="mb-0 pt-1 font-w500 text-black">{{"RM ".$data}}</p>
+                                    <p class="mb-0 pt-1 font-w500 text-black">{{"RM ".round($data, 2)}}</p>
                                 </div>
                                 <div class="text-center border-bx">
                                     <span>Total Gas Cost Overall</span>
-                                    <p class="mb-0 pt-1 font-w500 text-black">{{"RM ".$total}}</p>
+                                    <p class="mb-0 pt-1 font-w500 text-black">{{"RM ".round($total, 2)}}</p>
                                 </div>
                             </div>
                         </div>
