@@ -17,7 +17,7 @@
         <select class="form-control" name="vehicle_id">
         <option value="">Select Vehicle</option>
           @foreach (App\Models\Vehicle::get() as $item)
-               <option value="{{$item->id}}">{{$item->no_plate}}</option>
+               <option value="{{$item->id}}">{{$item->model."-".$item->no_plate}}</option>
           @endforeach
         </select>
       </div>
