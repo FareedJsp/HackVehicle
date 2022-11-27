@@ -29,7 +29,7 @@ class TotalPetrolController extends Controller
         $a = $totalp->id;
 
         $petrol = Petrol::where('vehicle_id', $a)->whereMonth('fill_date_time',Carbon::now()->month)
-                    ->whereYear('fill_date_time',Carbon::now()->year)->orderBy('fill_date_time', 'asc')
+                    ->orderBy('fill_date_time', 'desc')
                     ->get();
 
         return view('petrol.showpetrol', compact('petrol'));
