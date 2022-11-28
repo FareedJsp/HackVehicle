@@ -34,7 +34,7 @@
 
         <div class="mb-3">
           <label class="form-label">Date</label>
-          <input type="datetime-local" class="form-control" name="maintenance_date">
+          <input type="date" class="form-control" name="maintenance_date">
         </div>
 
         <div class="mb-3">
