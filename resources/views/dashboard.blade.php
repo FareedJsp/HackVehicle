@@ -13,7 +13,7 @@
             <span class="font-w600 text-black">
                 <i class="fa-solid fa-clock"></i>
                 {{
-                    Carbon::now()->toDateTimeString();
+                    Carbon::now()->toDateString();
                 }}
             </span>
         </div>
