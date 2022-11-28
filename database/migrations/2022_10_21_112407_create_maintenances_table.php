@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('vehicle_id');
             $table->string('workshop_name');
             $table->string('maintenance_title');
-            $table->date('maintenance_date');
+            $table->dateTime('maintenance_date');
             $table->text('maintenance_detail');
             $table->string('maintenance_image');
             $table->double('maintenance_cost', 8, 2);
