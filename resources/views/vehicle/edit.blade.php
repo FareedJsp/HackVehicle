@@ -26,14 +26,21 @@
   <div class="row">
     <div class="col-6">
 
-      <div class="mb-3">
+      <div class="mb-4">
         <label class="form-label">Company</label>
         <input type="text" class="form-control" name="company" value="{{$vehicle->company}}"readonly>
       </div>
 
-      <div class="mb-3">
-        <label class="form-label">Image (optional)</label>
-        <input type="file" class="form-control-file" name="image" value="{{$vehicle->image}}">
+      <div class="basic-form custom_file_input mb-3">
+        <div class="input-group">
+          <div class="input-group-prepend">
+              <span class="input-group-text">Upload</span>
+          </div>
+          <div class="custom-file">
+              <input type="file" class="custom-file-input" name="image" value="{{$vehicle->image}}">
+              <label class="custom-file-label">Image (optional)</label>
+          </div>
+        </div>
       </div>
 
       <div class="mb-3">

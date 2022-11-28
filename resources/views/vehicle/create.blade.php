@@ -45,14 +45,21 @@
         </select>
       </div>
 
-        <div class="mb-3">
+        <div class="mb-4">
           <label class="form-label">Model</label>
           <input type="text" class="form-control" name="model">
         </div>
 
-        <div class="mb-3">
-          <label class="form-label">Image (optional)</label>
-          <input type="file" class="form-control-file" name="image" value="default">
+        <div class="basic-form custom_file_input mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Upload</span>
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" name="image" value="default">
+                <label class="custom-file-label">Image file (optional)</label>
+            </div>
+          </div>
         </div>
 
         <div class="mb-3">
