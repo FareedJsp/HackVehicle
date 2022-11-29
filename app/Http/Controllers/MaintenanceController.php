@@ -11,6 +11,7 @@ class MaintenanceController extends Controller
     public function index()
     {
         $maintenance = Maintenance::get();
+        return $maintenance;
         return view('maintenance.index', compact('maintenance'));
     }
 
