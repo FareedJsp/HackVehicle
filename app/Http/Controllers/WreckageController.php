@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Wreckage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class WreckageController extends Controller
 {
@@ -92,8 +93,6 @@ class WreckageController extends Controller
 
         if(File::exists(public_path().'/wreckage_images/'.$data->wreckage_image)){
             File::delete(public_path().'/wreckage_images/'.$data->wreckage_image);
-        }else{
-            dd('File does not exists.');
         }
 
         $data->delete();

@@ -109,11 +109,8 @@ class VehicleController extends Controller
     {
         $data = Vehicle::find($id);
 
-        $image_path = app_path(public_path(). '/vehicle_images', $data->image);
-
-        if (File::exists($image_path)) {
-            //File::delete($image_path);
-            File::delete(public_path(). '/vehicle_images', $data->image);
+        if(File::exists(public_path().'/vehicle_images/'.$data->image)){
+            File::delete(public_path().'/vehicle_images/'.$data->image);
         }
 
         $data->delete();

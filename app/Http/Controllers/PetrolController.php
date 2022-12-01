@@ -170,8 +170,6 @@ class PetrolController extends Controller
 
         if(File::exists(public_path().'/petrol_images/'.$data->receipt_image)){
             File::delete(public_path().'/petrol_images/'.$data->receipt_image);
-        }else{
-            dd('File does not exists.');
         }
 
         $b = $data->vehicle_id;

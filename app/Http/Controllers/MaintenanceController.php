@@ -90,8 +90,6 @@ class MaintenanceController extends Controller
 
         if(File::exists(public_path().'/maintenance_images/'.$data->maintenance_image)){
             File::delete(public_path().'/maintenance_images/'.$data->maintenance_image);
-        }else{
-            dd('File does not exists.');
         }
 
         $data->delete();
