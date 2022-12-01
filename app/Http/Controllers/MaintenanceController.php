@@ -88,8 +88,6 @@ class MaintenanceController extends Controller
     {
         $data = Maintenance::find($id);
 
-        return $data;
-
         if(File::exists(public_path().'/maintenance_images/'.$data->maintenance_image)){
             File::delete(public_path().'/maintenance_images/'.$data->maintenance_image);
         }
