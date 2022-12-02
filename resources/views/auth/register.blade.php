@@ -27,6 +27,9 @@
                                                 </span>
                                             @enderror
                                     </div>
+                                    
+                                    <input type="hidden" value="Administrator" name="role" >
+
                                     <div class="form-group">
                                         <label class="mb-1"><strong>{{ __('Name') }}</strong></label>
                                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>

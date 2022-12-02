@@ -17,9 +17,15 @@ return new class extends Migration
             $table->id();
             $table->string('company');
             $table->string('name');
+            $table->string('role');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('image')->default('user.png');
+            $table->enum('driver_gender', ['male', 'female'])->nullable();
+            $table->date('driver_birth_date')->nullable();
+            $table->enum('driver_status', ['Available', 'Not Available'])->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });

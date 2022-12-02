@@ -182,7 +182,7 @@
                                 <div class="media-body text-white text-right">
                                     <p class="mb-1">Driver</p>
                                     <h3 class="text-white">
-                                        {{App\Models\Driver::count()}}
+                                        {{App\Models\User::where('role', 'Driver')->count()}}
                                     </h3>
                                 </div>
                             </div>
@@ -366,7 +366,7 @@
                                     <div class="card-body">
                                         <div class="basic-list-group">
                                             <div class="list-group">
-                                                @foreach (App\Models\Driver::where('status', 'Available')->get() as $item)
+                                                @foreach (App\Models\User::where('role', 'Driver')->where('driver_status', 'Available')->get() as $item)
                                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                                     {{$item->name}}<span class="badge badge-circle badge-outline-success"><i class="fa-solid fa-check"></i></span>
                                                 </li>
@@ -406,7 +406,7 @@
                                     <div class="card-body">
                                         <div class="basic-list-group">
                                             <div class="list-group">
-                                                @foreach (App\Models\Driver::where('status', 'Not Available')->get() as $item)
+                                                @foreach (App\Models\User::where('role', 'Driver')->where('driver_status', 'Not Available')->get() as $item)
                                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                                     {{$item->name}}<span class="badge badge-circle badge-outline-danger"><i class="fa-solid fa-xmark"></i></span>
                                                 </li>

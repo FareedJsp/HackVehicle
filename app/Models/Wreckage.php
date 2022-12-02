@@ -16,6 +16,6 @@ class Wreckage extends Model
     }
 
     public function Driver(){
-        return $this->belongsTo(Driver::class, 'driver_id');
+        return $this->belongsTo(User::class, 'driver_id');
     }
 }

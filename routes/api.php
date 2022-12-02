@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DriverController;
+use App\Http\Controllers\AuthApiController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\WreckageController;
 use App\Http\Controllers\MaintenanceController;
@@ -17,6 +18,8 @@ use App\Http\Controllers\MaintenanceController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+//Auth
+Route::post('/driverlogin',[AuthApiController::class, 'login']);
 
 //driver
 Route::get('/getdriver',[DriverController::class, 'getdriver']);

@@ -12,7 +12,9 @@
     <li class="list-group-item"><a href="/addmaintenance" >add maintenance</a></li>
     <li class="list-group-item"><a href="/addwreckage" >add wreckage</a></li>
     <li class="list-group-item"><a href="/test3" >testbootstrapadminlte</a></li>
-    <li class="list-group-item"><a href="/vehicletest" >front</a></li>
+    <li class="list-group-item"><a href="/addgdriver" >ok</a></li>
+    <li class="list-group-item"><a href="/gdriver" >gdriver</a></li>
+    <li class="list-group-item"><a href="/checkgdriver" >checkdriver</a></li>
 </ul>
 
 </div>

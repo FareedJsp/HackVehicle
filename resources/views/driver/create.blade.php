@@ -25,13 +25,11 @@
   <div class="row">
     <div class="col-6">
 
-        @php
-            $company = DB::table('users')->first();
-        @endphp
+        <input type="hidden" value="Driver" name="role">
 
         <div class="mb-3">
           <label class="form-label">Company</label>
-          <input type="text" class="form-control" name="company" value="{{$company->company}}"readonly>
+          <input type="text" class="form-control" name="company" value="{{Auth::User()->company}}"readonly>
         </div>
 
         <div class="mb-3">
@@ -43,10 +41,10 @@
           <label class="form-label">Image (optional)</label>
           <input type="file" class="form-control-file" name="image" value="default">
         </div>
-
+        
           <div class="mb-3">
             <label class="form-label">Gender</label>
-            <select class="form-control" name="gender">
+            <select class="form-control" name="driver_gender">
               <option value="">Select Gender</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
@@ -55,12 +53,12 @@
 
           <div class="mb-3">
             <label class="form-label">Date of Birth</label>
-            <input type="date" class="form-control" name="birth_date">
+            <input type="date" class="form-control" name="driver_birth_date">
           </div>
 
           <div class="mb-3">
             <label class="form-label">Status</label>
-            <select class="form-control" name="status">
+            <select class="form-control" name="driver_status">
               <option selected>Open this select menu</option>
               <option value="Available">Available</option>
               <option value="Not Available">Not Available</option>
@@ -68,8 +66,8 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Username</label>
-            <input type="text" class="form-control" name="username">
+            <label class="form-label">Email</label>
+            <input type="text" class="form-control" name="email">
           </div>
 
           <div class="mb-3">

@@ -27,7 +27,7 @@
 
       <div class="mb-3">
         <label class="form-label">Company</label>
-        <input type="text" class="form-control" name="company" value="{{$driver->company}}">
+        <input type="text" class="form-control" name="company" value="{{$driver->company}}" readonly>
       </div>
 
         <div class="mb-3">
@@ -43,20 +43,20 @@
           <div class="mb-3">
             <label class="form-label">Gender</label>
             <select class="form-control" name="gender">
-              <option value="{{$driver->gender}}" readonly="">{{$driver->gender}}</option>
+              <option value="{{$driver->gender}}" readonly="">{{$driver->driver_gender}}</option>
             </select>
           </div>
 
           <div class="mb-3">
             <label class="form-label">Date of Birth</label>
-            <input type="date" class="form-control" name="birth_date" value="{{$driver->birth_date}}" readonly>
+            <input type="date" class="form-control" name="birth_date" value="{{$driver->driver_birth_date}}" readonly>
           </div>
 
           <div class="mb-3">
             <label class="form-label">Status</label>
             <select class="form-control" name="status">
-              <option value="{{$driver->status}}"selected>{{$driver->status}}</option>
-              @if ($driver->status == 'Available')
+              <option value="{{$driver->driver_status}}"selected>{{$driver->driver_status}}</option>
+              @if ($driver->driver_status == 'Available')
                 <option value="Not Available">Not Available</option>   
               @else
               <option value="Available">Available</option>
@@ -65,8 +65,8 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Username</label>
-            <input type="text" class="form-control" name="username" value="{{$driver->username}}">
+            <label class="form-label">Email</label>
+            <input type="text" class="form-control" name="username" value="{{$driver->email}}">
           </div>
 
           <div class="mb-3">

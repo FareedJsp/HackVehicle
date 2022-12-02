@@ -26,7 +26,7 @@
         <label class="form-label">Driver</label>
         <select class="form-control" name="driver_id">
         <option value="">Select Driver</option>
-          @foreach (App\Models\Driver::get() as $item)
+          @foreach (App\Models\User::where('role', 'Driver')->get() as $item)
                <option value="{{$item->id}}">{{$item->name}}</option>
           @endforeach
         </select>

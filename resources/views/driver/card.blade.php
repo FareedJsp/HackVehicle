@@ -25,7 +25,7 @@
                         </div>
                         <div>
                             <h5 class="title text-capitalize">{{$item->name}}</h5>
-                            <span class="text-primary text-capitalize">{{$item->gender}}</span>
+                            <span class="text-primary text-capitalize">{{$item->driver_gender}}</span>
                         </div>
                     </div>
                     <ul class="list-group list-group-flush">
@@ -35,11 +35,11 @@
                         </li>
                         <li class="list-group-item">
                             <span class="mb-0 title">Birth Date</span> :
-                            <span class="text-black ml-2">{{$item->birth_date}}</span>
+                            <span class="text-black ml-2">{{$item->driver_birth_date}}</span>
                         </li>
                         <li class="list-group-item">
                             <span class="mb-0 title">Username</span> :
-                            <span class="text-black ml-2">{{$item->username}}</span>
+                            <span class="text-black ml-2">{{$item->email}}</span>
                         </li>
                         <li class="list-group-item">
                             <span class="mb-0 title">Password</span> :
@@ -48,10 +48,10 @@
                     </ul>
                 </div>
                 <div class="card-footer">
-                    @if ($item->status == 'Available')
-                        <span class="badge badge-success d-lg-inline-block d-none">{{$item->status}}</span>
+                    @if ($item->driver_status == 'Available')
+                        <span class="badge badge-success d-lg-inline-block d-none">{{$item->driver_status}}</span>
                     @else
-                        <span class="badge badge-danger d-lg-inline-block d-none">{{$item->status}}</span>
+                        <span class="badge badge-danger d-lg-inline-block d-none">{{$item->driver_status}}</span>
                     @endif
                     <div class="d-flex action-button float-right">
                         <a href="/editdriver/{{$item->id}}" class="btn btn-info btn-xs light px-2">

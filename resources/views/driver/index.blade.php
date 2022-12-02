@@ -55,7 +55,7 @@
                         </td>
                         <td>
                           <div>
-                            {{$row->gender}}
+                            {{$row->driver_gender}}
                           </div>
                         </td>
                         <td>
@@ -63,14 +63,14 @@
                             {{$row->age()}}
                           </div>
                         </td>
-                          @if ($row->status == 'Available')
+                          @if ($row->driver_status == 'Available')
                           <td style="color : green">Available</td>
                           @elseif($row->status == 'Not Available')
                           <td style="color : red">Not Available</td>
                           @endif
                         <td>
                           <div>
-                            {{$row->username}}
+                            {{$row->email}}
                           </div>
                         </td>
                         <td>

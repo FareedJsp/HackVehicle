@@ -25,6 +25,25 @@ Route::get('/', function () {
     return redirect()->away('http://fareed.dfa-learning.sabahloka.com/');
 });
 
+//User
+
+Route::get('/driver',[UserController::class,'index'])->name('driver');
+Route::get('/adddriver',[UserController::class,'create'])->name('register');
+Route::post('/insertdriver',[UserController::class,'store']);
+
+Route::get('/checkgdriver',[UserController::class,'check']);
+
+//User as Driver
+
+Route::get('/drivercard',[UserController::class,'indexCard']);
+Route::get('/editdriver/{id}',[UserController::class,'edit']);
+Route::post('/updatedriver/{id}',[UserController::class,'update']);
+Route::get('/deletedriver/{id}',[UserController::class,'destroy']);
+
+Route::get('/driveravailable',[UserController::class,'available']);
+Route::get('/drivernotavailable',[UserController::class,'notavailable']);
+
+
 //Vehicle
 
 Route::get('/vehicle',[VehicleController::class,'index'])->name('vehicle');
@@ -52,19 +71,6 @@ Route::post('/insertmaintenance',[MaintenanceController::class,'store']);
 Route::get('/editmaintenance/{id}',[MaintenanceController::class,'edit']);
 Route::post('/updatemaintenance/{id}',[MaintenanceController::class,'update']);
 Route::get('/deletemaintenance/{id}',[MaintenanceController::class,'destroy']);
-
-//Driver
-
-Route::get('/driver',[DriverController::class,'index'])->name('driver');
-Route::get('/drivercard',[DriverController::class,'indexCard']);
-Route::get('/adddriver',[DriverController::class,'create']);
-Route::post('/insertdriver',[DriverController::class,'store']);
-Route::get('/editdriver/{id}',[DriverController::class,'edit']);
-Route::post('/updatedriver/{id}',[DriverController::class,'update']);
-Route::get('/deletedriver/{id}',[DriverController::class,'destroy']);
-
-Route::get('/driveravailable',[DriverController::class,'available']);
-Route::get('/drivernotavailable',[DriverController::class,'notavailable']);
 
 //Petrol
 
