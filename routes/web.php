@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\PetrolController;
@@ -103,6 +104,17 @@ Route::post('/insertwreckage',[WreckageController::class,'store']);
 Route::get('/editwreckage/{id}',[WreckageController::class,'edit']);
 Route::post('/updatewreckage/{id}',[WreckageController::class,'update']);
 Route::get('/deletewreckage/{id}',[WreckageController::class,'destroy']);
+
+/////////////////test///////////////////
+
+Route::get('/testonly',[TestController::class,'index'])->name('testpage');
+Route::get('/addtest',[TestController::class,'create']);
+Route::post('/inserttest',[TestController::class,'store']);
+Route::get('/edittest/{id}',[TestController::class,'edit']);
+Route::post('/updatetest/{id}',[TestController::class,'update']);
+Route::get('/deletetest/{id}',[TestController::class,'destroy']);
+
+//////////////////////test///////////////
 
 Auth::routes();
 
