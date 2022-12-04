@@ -114,6 +114,9 @@ Route::get('/edittest/{id}',[TestController::class,'edit']);
 Route::post('/updatetest/{id}',[TestController::class,'update']);
 Route::get('/deletetest/{id}',[TestController::class,'destroy']);
 
+Route::get('/addautotest',[TestController::class,'autocreate']);
+Route::post('/insertautotest',[TestController::class,'autostore']);
+
 //////////////////////test///////////////
 
 Auth::routes();

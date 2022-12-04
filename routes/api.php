@@ -47,3 +47,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //test
 Route::get('/checktest',[TestController::class, 'getdataTestonly']);
 Route::post('/addtest',[TestController::class, 'adddataTestonly']);
+
+Route::post('/addautotestapi',[TestController::class, 'addautodataTestonly']);

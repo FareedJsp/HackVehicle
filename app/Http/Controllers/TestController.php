@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Testonly;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TestController extends Controller
 {
@@ -33,6 +34,57 @@ class TestController extends Controller
     
             return redirect()->route ('testpage')->with('success', 'test has been added successfully.');
         }
+
+        //auto
+
+        public function autocreate()
+        {
+            return view('testonly.createauto');
+        }
+
+        public function autostore(Request $request)
+        {
+            $data = new Testonly;
+
+            $a = Auth::User()->id;
+            $b = Auth::User()->name;
+    
+            $data -> driver_id = $a;
+            $data -> name = $b;
+            $data -> testword = $request->testword;
+    
+            // return $data;
+    
+            $data->save();
+    
+            return redirect()->route ('testpage')->with('success', 'test has been added successfully.');
+        }
+
+        public function addautodataTestonly(Request $request){
+            $result = [];
+            $result['status'] = false ;
+            $result['message'] = "something error";
+    
+            $data = new Testonly;
+    
+            $a = Auth::User()->id;
+            $b = Auth::User()->name;
+    
+            $data -> driver_id = $a;
+            $data -> name = $b;
+            $data -> testword = $request->testword;
+
+            $data->save();
+    
+    
+            $result['data'] = $data ;
+            $result['status'] = true ;
+            $result['message'] = "succesfully added data";
+                
+            return response()->json($result);
+        }
+
+        //endauto
     
         public function edit($id)
         {

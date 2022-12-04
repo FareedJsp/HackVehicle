@@ -31,7 +31,7 @@
                         <th>GENDER</th>
                         <th>AGE</th>
                         <th>STATUS</th>
-                        <th>USERNAME</th>
+                        <th>EMAIL</th>
                         <th>PASSWORD</th>
                         <th>ACTION</th>
                       </tr>
@@ -65,7 +65,7 @@
                         </td>
                           @if ($row->driver_status == 'Available')
                           <td style="color : green">Available</td>
-                          @elseif($row->status == 'Not Available')
+                          @elseif($row->driver_status == 'Not Available')
                           <td style="color : red">Not Available</td>
                           @endif
                         <td>

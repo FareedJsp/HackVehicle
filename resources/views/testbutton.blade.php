@@ -16,6 +16,8 @@
     <li class="list-group-item"><a href="/gdriver" >gdriver</a></li>
     <li class="list-group-item"><a href="/checkgdriver" >checkdriver</a></li>
     <li class="list-group-item"><a href="/addtest" >Add Test Data</a></li>
+
+    <li class="list-group-item"><a href="/addautotest" >Auto Test Data</a></li>
     <li class="list-group-item"><a href="/testonly" >View Test</a></li>
 </ul>
 

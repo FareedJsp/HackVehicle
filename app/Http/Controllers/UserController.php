@@ -87,7 +87,7 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        $data = Driver::findOrFail($id);
+        $data = User::findOrFail($id);
 
         $data -> company = $request->company;
         $data -> name = $request->name;
