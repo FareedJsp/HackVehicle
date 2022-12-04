@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -127,6 +128,19 @@ class UserController extends Controller
         $result['message'] = "success";
         
         return response()->json($result);
+    }
+
+    public function destroy($id)
+    {
+        $data = User::find($id);
+
+        // if(File::exists(public_path().'/driver_images/'.$data->image)){
+        //     File::delete(public_path().'/driver_images/'.$data->image);
+        // }
+
+        $data->delete();
+
+        return redirect()->route ('driver')->with('success', 'vehicle has been deleted successfully.');
     }
 
     public function check()
