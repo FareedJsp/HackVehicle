@@ -38,7 +38,7 @@
                             <span class="text-black ml-2">{{$item->driver_birth_date}}</span>
                         </li>
                         <li class="list-group-item">
-                            <span class="mb-0 title">Username</span> :
+                            <span class="mb-0 title">Email</span> :
                             <span class="text-black ml-2">{{$item->email}}</span>
                         </li>
                         <li class="list-group-item">
