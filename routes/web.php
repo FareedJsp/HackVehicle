@@ -29,7 +29,7 @@ Route::get('/', function () {
 //User
 
 Route::get('/driver',[UserController::class,'index'])->name('driver');
-Route::get('/adddriver',[UserController::class,'create'])->name('register');
+Route::get('/adddriver',[UserController::class,'create']);
 Route::post('/insertdriver',[UserController::class,'store']);
 
 Route::get('/checkgdriver',[UserController::class,'check']);
