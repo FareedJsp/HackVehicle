@@ -285,7 +285,9 @@
         <div class="col-xl-4 col-xxl-6 col-lg-6">
             <div class="card">
                 <div class="card-header border-0 pb-0">
-                    <h4 class="card-title">Notification</h4>
+                    <div class="mb-2">
+                        <h4 class="fs-20 text-black">Notification</h4>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div id="DZ_W_TimeLine" class="widget-timeline dz-scroll height370">
@@ -325,7 +327,9 @@
         <div class="col-xl-8 col-xxl-8 col-lg-12 col-sm-12">
             <div class="card">
                 <div class="card-header border-0 pb-0 d-sm-flex d-block">
-                    <h4 class="card-title">Status of Vehicle and Driver</h4>
+                    <div class="mb-2">
+                        <h4 class="fs-20 text-black">Status Of Vehicle And Driver</h4>
+                    </div>
                     <div class="card-action mb-sm-0 my-2">
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
