@@ -22,8 +22,7 @@ use App\Http\Controllers\TotalPetrolController;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
-    return redirect()->away('http://fareed.dfa-learning.sabahloka.com/');
+    return view('home');
 });
 
 //User
