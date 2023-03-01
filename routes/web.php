@@ -9,6 +9,7 @@ use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\WreckageController;
 use App\Http\Controllers\MaintenanceController;
 use App\Http\Controllers\TotalPetrolController;
+use App\Http\Controllers\FullCalenderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -126,6 +127,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/user',[UserController::class,'name']);
 
 //Extra Function
+
+//Full Calendar
+
+Route::get('fullcalender', [FullCalenderController::class, 'index']);
+Route::post('fullcalenderAjax', [FullCalenderController::class, 'ajax']);
 
 Route::get('/calendar', function () {
     return view('calendar');

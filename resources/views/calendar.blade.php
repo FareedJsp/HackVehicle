@@ -1,5 +1,13 @@
 @extends('layouts.main')
+
+@section('head')
+
+<link href="{{asset('vendor/fullcalendar/css/main.min.css')}}" rel="stylesheet">
+
+@endsection
+
 @section('title' , 'Calendar')
+
 @section('content')
 
 <div class="container-fluid">

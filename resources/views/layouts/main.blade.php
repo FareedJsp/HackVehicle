@@ -33,9 +33,9 @@
   <link rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css')}}">
   <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
 
-  <!-- Calendar -->
-
-  <link href="{{asset('vendor/fullcalendar/css/main.min.css')}}" rel="stylesheet">
+  <!-- Section -->
+  
+  @yield('head')
 
   <!-- Data Tables -->
 

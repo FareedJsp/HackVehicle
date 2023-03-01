@@ -19,6 +19,7 @@
 
     <li class="list-group-item"><a href="/addautotest" >Auto Test Data</a></li>
     <li class="list-group-item"><a href="/testonly" >View Test</a></li>
+    <li class="list-group-item"><a href="/fullcalender" >Test Calendar</a></li>
 </ul>
 
 </div>
