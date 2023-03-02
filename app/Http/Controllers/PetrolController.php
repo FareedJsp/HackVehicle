@@ -122,6 +122,9 @@ class PetrolController extends Controller
         $image = null;
 
         if($request->hasFile('receipt_image')){
+            if(File::exists(public_path().'/petrol_images/'.$data->receipt_image)){
+                File::delete(public_path().'/petrol_images/'.$data->receipt_image);
+            }
             $file = $request->file('receipt_image');
             $name = date('YmdHis').'.'.$file->getClientOriginalExtension();
             $file->move(public_path(). '/petrol_images', $name);

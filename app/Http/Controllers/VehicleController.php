@@ -92,6 +92,9 @@ class VehicleController extends Controller
         $data -> status = $request->status;
 
         if($request->hasFile('image')){
+            if(File::exists(public_path().'/vehicle_images/'.$data->image) && $data->image !== 'cardummy.png'){
+                File::delete(public_path().'/vehicle_images/'.$data->image);
+            }
             $file = $request->file('image');
             $name = date('YmdHis').'.'.$file->getClientOriginalExtension();
             $file->move(public_path(). '/vehicle_images', $name);
@@ -109,7 +112,7 @@ class VehicleController extends Controller
     {
         $data = Vehicle::find($id);
 
-        if(File::exists(public_path().'/vehicle_images/'.$data->image)){
+        if(File::exists(public_path().'/vehicle_images/'.$data->image) && $data->image !== 'cardummy.png'){
             File::delete(public_path().'/vehicle_images/'.$data->image);
         }
 

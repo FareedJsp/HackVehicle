@@ -100,6 +100,9 @@ class UserController extends Controller
         $data -> password = bcrypt($request->get('password'));
 
         if($request->hasFile('image')){
+            if(File::exists(public_path().'/driver_images/'.$data->image) && $data->image !== 'user.png'){
+                File::delete(public_path().'/driver_images/'.$data->image);
+            }
             $file = $request->file('image');
             $name = date('YmdHis').'.'.$file->getClientOriginalExtension();
             $file->move(public_path(). '/driver_images', $name);
@@ -134,9 +137,9 @@ class UserController extends Controller
     {
         $data = User::find($id);
 
-        // if(File::exists(public_path().'/driver_images/'.$data->image)){
-        //     File::delete(public_path().'/driver_images/'.$data->image);
-        // }
+        if(File::exists(public_path().'/driver_images/'.$data->image) && $data->image !== 'user.png'){
+            File::delete(public_path().'/driver_images/'.$data->image);
+        }
 
         $data->delete();
 
