@@ -64,6 +64,7 @@
                 </div>
             </div>
         </div>
+        
         <!-- BEGIN MODAL -->
         <div class="modal fade none-border" id="event-modal">
             <div class="modal-dialog">
@@ -80,6 +81,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Modal Add Category -->
         <div class="modal fade none-border" id="add-category">
             <div class="modal-dialog">
@@ -127,5 +129,79 @@
 <script src="{{asset('vendor/moment/moment.min.js')}}"></script>
 <script src="{{asset('vendor/fullcalendar/js/main.min.js')}}"></script>
 <script src="{{asset('js/plugins-init/fullcalendar-init.js')}}"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        selectable: true,
+        selectHelper: true,
+        editable: true,
+        eventResize: function(info) {
+            $.ajax({
+                url: '/events/update',
+                data: {
+                    id: info.event.id,
+                    start: info.event.start.toISOString(),
+                    end: info.event.end.toISOString()
+                },
+                type: 'POST',
+                success: function(response) {
+                    calendar.refetchEvents();
+                }
+            });
+        },
+        eventDrop: function(info) {
+            $.ajax({
+                url: '/events/update',
+                data: {
+                    id: info.event.id,
+                    start: info.event.start.toISOString(),
+                    end: info.event.end.toISOString()
+                },
+                type: 'POST',
+                success: function(response) {
+                    calendar.refetchEvents();
+                }
+            });
+        },
+        events: '/events',
+    });
+
+    calendar.render();
+
+    // Add Event Modal
+    $('#addModal').on('show.bs.modal', function(e) {
+        $('#eventForm')[0].reset();
+    });
+
+    $('#addModal').on('submit', function(e) {
+        e.preventDefault();
+
+        var title = $('#title').val();
+        var start = $('#start').val();
+        var end = $('#end').val();
+        var description = $('#description').val();
+
+        $.ajax({
+            url: '/events',
+            data: {
+                title: title,
+                start: start,
+                end: end,
+                description: description
+            },
+            type: 'POST',
+            success: function(response) {
+                $('#addModal').modal('hide');
+                calendar.refetchEvents();
+            }
+        });
+    });
+});
+
+</script>
 
 @endsection

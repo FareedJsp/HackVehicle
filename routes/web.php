@@ -6,10 +6,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\PetrolController;
 use App\Http\Controllers\VehicleController;
+use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\WreckageController;
 use App\Http\Controllers\MaintenanceController;
 use App\Http\Controllers\TotalPetrolController;
-use App\Http\Controllers\FullCalenderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -136,6 +136,11 @@ Route::post('fullcalenderAjax', [FullCalenderController::class, 'ajax']);
 Route::get('/calendar', function () {
     return view('calendar');
 });
+
+Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar.index');
+Route::post('/events', [CalendarController::class, 'save'])->name('events.save');
+Route::post('/events/{id}', [CalendarController::class, 'update'])->name('events.update');
+
 
 //Other Test
 
