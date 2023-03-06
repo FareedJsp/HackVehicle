@@ -7,36 +7,65 @@ use App\Models\Event;
 
 class EventController extends Controller
 {
-    public function index()
+
+    public function index(Request $request)
     {
+  
+        if($request->ajax()) {
+       
+             $data = Event::whereDate('start', '>=', $request->start)
+                       ->whereDate('end',   '<=', $request->end)
+                       ->get(['id', 'title', 'start', 'end', 'color', 'description']);
+  
+             return response()->json($data);
+        }
+  
         return view('calendar');
     }
-
-    public function save(Request $request)
+ 
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function ajax(Request $request)
     {
-        $event = new Event;
-        $event->title = $request->title;
-        $event->start_time = $request->start;
-        $event->end_time = $request->end;
-        $event->description = $request->description;
-        $event->save();
-
-        return response()->json([
-            'success' => true,
-            'event_id' => $event->id
-        ]);
-    }
-
-    public function update(Request $request, $id)
-    {
-        $event = Event::find($id);
-        $event->start_time = $request->start;
-        $event->end_time = $request->end;
-        $event->save();
-
-        return response()->json([
-            'success' => true
-        ]);
+ 
+        switch ($request->type) {
+           case 'add':
+              $event = Event::create([
+                  'title' => $request->title,
+                  'start' => $request->start,
+                  'color' => $request->color,
+                  'description' => $request->description,
+                  'end' => $request->end,
+              ]);
+ 
+              return response()->json($event);
+             break;
+  
+           case 'update':
+              $event = Event::find($request->id)->update([
+                  'title' => $request->title,
+                  'start' => $request->start,
+                  'color' => $request->color,
+                  'description' => $request->description,
+                  'end' => $request->end,
+              ]);
+ 
+              return response()->json($event);
+             break;
+  
+           case 'delete':
+              $event = Event::find($request->id)->delete();
+  
+              return response()->json($event);
+             break;
+             
+           default:
+             # code...
+             break;
+        }
     }
 }
 

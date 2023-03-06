@@ -130,16 +130,12 @@ Route::get('/user',[UserController::class,'name']);
 
 //Full Calendar
 
-Route::get('fullcalender', [FullCalenderController::class, 'index']);
-Route::post('fullcalenderAjax', [FullCalenderController::class, 'ajax']);
+// Route::get('/calendar', function () {
+//     return view('calendar');
+// });
 
-Route::get('/calendar', function () {
-    return view('calendar');
-});
-
-Route::get('/calendar', [EventController::class, 'index'])->name('calendar.index');
-Route::post('/events', [EventController::class, 'save'])->name('events.save');
-Route::post('/events/{id}', [EventController::class, 'update'])->name('events.update');
+Route::get('calendar', [EventController::class, 'index']);
+Route::post('calendarAjax', [EventController::class, 'ajax']);
 
 
 //Other Test
