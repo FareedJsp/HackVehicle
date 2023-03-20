@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
@@ -10,6 +12,7 @@ use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\WreckageController;
 use App\Http\Controllers\MaintenanceController;
 use App\Http\Controllers\TotalPetrolController;
+use App\Http\Controllers\FullCalendarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -136,6 +139,10 @@ Route::get('/user',[UserController::class,'name']);
 
 Route::get('calendar', [EventController::class, 'index']);
 Route::post('calendarAjax', [EventController::class, 'ajax']);
+
+
+Route::get('fullcalendar', [FullCalendarController::class, 'index']);
+Route::post('fullcalendarAjax', [FullCalendarController::class, 'ajax']);
 
 
 //Other Test

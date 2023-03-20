@@ -1,8 +1,20 @@
 @extends('layouts.main')
 
+@section('meta')
+<meta name="csrf-token" content="{{ csrf_token() }}">
+@endsection
+
 @section('head')
 
 <link href="{{asset('vendor/fullcalendar/css/main.min.css')}}" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
 @endsection
 
@@ -126,16 +138,9 @@
 @section('javascripts')
 
 <!-- CALENDAR -->
-<script src="{{asset('vendor/moment/moment.min.js')}}"></script>
+{{-- <script src="{{asset('vendor/moment/moment.min.js')}}"></script> --}}
 <script src="{{asset('vendor/fullcalendar/js/main.min.js')}}"></script>
 <script src="{{asset('js/plugins-init/fullcalendar-init.js')}}"></script>
-
-<!-- FULL CALENDAR -->
-
-<script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js')}}"></script>
-<script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js')}}"></script>
-<script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js')}}"></script>
-
 <script>
     $(document).ready(function () {
        
@@ -171,8 +176,6 @@
                                     data: {
                                         title: title,
                                         start: start,
-                                        color: color,
-                                        description: description,
                                         end: end,
                                         type: 'add'
                                     },
@@ -203,8 +206,6 @@
                                 data: {
                                     title: event.title,
                                     start: start,
-                                    color: color,
-                                    description: description,
                                     end: end,
                                     id: event.id,
                                     type: 'update'
@@ -215,6 +216,8 @@
                                 }
                             });
                         },
+    
+                        
                         eventClick: function (event) {
                             var deleteMsg = confirm("Do you really want to delete?");
                             if (deleteMsg) {
@@ -239,8 +242,7 @@
      
     function displayMessage(message) {
         toastr.success(message, 'Event');
-    } 
-      
+    }  
 </script>
 
 @endsection

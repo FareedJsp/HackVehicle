@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta charset="utf-8">
+  @yield('meta')
 	<meta name="keywords" content="">
 	<meta name="author" content="">
 	<meta name="robots" content="">
@@ -31,7 +31,6 @@
 	<link href="{{asset('vendor/owl-carousel/owl.carousel.css')}}" rel="stylesheet">
 
   <link rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css')}}">
-  <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
 
   <!-- Section -->
   

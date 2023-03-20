@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
   
 use Illuminate\Http\Request;
-use App\Models\Event;
+use App\Models\Calendar;
   
-class EventController extends Controller
+class FullCalendarController extends Controller
 {
     /**
      * Write code on Method
@@ -17,14 +17,14 @@ class EventController extends Controller
   
         if($request->ajax()) {
        
-             $data = Event::whereDate('start', '>=', $request->start)
+             $data = Calendar::whereDate('start', '>=', $request->start)
                        ->whereDate('end',   '<=', $request->end)
                        ->get(['id', 'title', 'start', 'end']);
   
              return response()->json($data);
         }
   
-        return view('calendar');
+        return view('fullcalendar');
     }
  
     /**
@@ -37,7 +37,7 @@ class EventController extends Controller
  
         switch ($request->type) {
            case 'add':
-              $event = Event::create([
+              $event = Calendar::create([
                   'title' => $request->title,
                   'start' => $request->start,
                   'end' => $request->end,
@@ -47,7 +47,7 @@ class EventController extends Controller
              break;
   
            case 'update':
-              $event = Event::find($request->id)->update([
+              $event = Calendar::find($request->id)->update([
                   'title' => $request->title,
                   'start' => $request->start,
                   'end' => $request->end,
@@ -58,7 +58,7 @@ class EventController extends Controller
         
   
            case 'delete':
-              $event = Event::find($request->id)->delete();
+              $event = Calendar::find($request->id)->delete();
   
               return response()->json($event);
              break;
